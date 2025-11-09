@@ -18,11 +18,37 @@ import { siteConfig } from "../config";
         </div>
       </div>
 
-      <div class="lg:col-span-8 space-y-8">
-        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600">
+      <div class="lg:col-span-8 space-y-6">
+        <!-- Introduction -->
+        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700">
           {siteConfig.aboutMe}
         </p>
 
+        <!-- Domain Expertise Cards -->
+        <div class="space-y-4 pt-2">
+          {
+            siteConfig.aboutMeSections.map((section) => (
+              <div class="p-4 sm:p-5 md:p-6 bg-gray-50 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all duration-300">
+                <h3
+                  class="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3"
+                  style={`color: ${siteConfig.accentColor}`}
+                >
+                  ★★ {section.title} ★★
+                </h3>
+                <p class="text-base sm:text-lg leading-relaxed text-gray-700">
+                  {section.content}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- Closing Statement -->
+        <p class="text-base sm:text-lg leading-relaxed text-gray-600 italic pt-2">
+          {siteConfig.closingStatement}
+        </p>
+
+        <!-- Skills -->
         <div class="pt-4">
           <div class="flex flex-wrap gap-3">
             {

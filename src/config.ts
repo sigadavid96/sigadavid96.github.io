@@ -11,7 +11,26 @@ export const siteConfig = {
     github: "https://github.com/sigadavid96",
   },
   aboutMe:
-    "Senior Data Scientist at IBM with 7+ years of comprehensive experience spanning AI Engineering, Data Science, and Data Analytics domains. Master's in Information Systems Management from Carnegie Mellon University (GPA: 3.77).\n\n**AI Engineering**: Building end-to-end production AI systems integrating Software Engineering, Machine Learning, and Generative AI. Architected self-service ML platforms serving 1,000+ data scientists, deployed LLM-powered compliance automation with RAG and LangChain, and led AI-powered code generation initiatives achieving 30% productivity gains.\n\n**Data Science**: Expert in ML, Deep Learning, and NLP with hands-on experience fine-tuning BERT and GPT models, implementing LSTM forecasting pipelines serving 60+ models, and developing sentiment analysis systems processing millions of data points. Strong foundation in statistical modeling and algorithm implementation.\n\n**Data Analytics**: Delivered high-impact analytics across Credit Risk (Wells Fargo - model validation, PD/LGD/EAD analysis, regulatory compliance) and Pharmaceutical HEOR (Mu Sigma - health economics outcomes research, pricing analytics, market access strategies). Specialized in translating complex data into actionable business insights.\n\nPassionate about leveraging cutting-edge AI technologies to solve real-world problems while mentoring teams on MLOps best practices and data-driven decision making.",
+    "Senior Data Scientist at IBM with 7+ years of comprehensive experience spanning AI Engineering, Data Science, and Data Analytics domains. Master's in Information Systems Management from Carnegie Mellon University (GPA: 3.77).",
+  aboutMeSections: [
+    {
+      title: "AI Engineering",
+      content:
+        "Building end-to-end production AI systems integrating Software Engineering, Machine Learning, and Generative AI. Architected self-service ML platforms serving 1,000+ data scientists, deployed LLM-powered compliance automation with RAG and LangChain, and led AI-powered code generation initiatives achieving 30% productivity gains.",
+    },
+    {
+      title: "Data Science",
+      content:
+        "Expert in ML, Deep Learning, and NLP with hands-on experience fine-tuning BERT and GPT models, implementing LSTM forecasting pipelines serving 60+ models, and developing sentiment analysis systems processing millions of data points. Strong foundation in statistical modeling and algorithm implementation.",
+    },
+    {
+      title: "Data Analytics",
+      content:
+        "Delivered high-impact analytics across Credit Risk (Wells Fargo - model validation, PD/LGD/EAD analysis, regulatory compliance) and Pharmaceutical HEOR (Mu Sigma - health economics outcomes research, pricing analytics, market access strategies). Specialized in translating complex data into actionable business insights.",
+    },
+  ],
+  closingStatement:
+    "Passionate about leveraging cutting-edge AI technologies to solve real-world problems while mentoring teams on MLOps best practices and data-driven decision making.",
   skills: [
     "Python",
     "SQL",
