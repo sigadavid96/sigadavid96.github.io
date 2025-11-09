@@ -4,10 +4,18 @@ export const siteConfig = {
   description: "Portfolio of Davidson Siga - Senior Data Scientist at IBM specializing in Applied AI, MLOps, and Generative AI solutions for Fortune 100 companies",
   accentColor: "#2563EB",
   phone: "(412) 954-8493",
+  typingAnimation: [
+    "GenAI",
+    "Machine Learning",
+    "Deep Learning",
+    "Software Engineering",
+    "Data Science",
+    "Data Analytics",
+    "Data Engineering",
+  ],
   social: {
     email: "sigadavid96@gmail.com",
     linkedin: "https://linkedin.com/in/davidsonsiga",
-    twitter: "https://x.com/",
     github: "https://github.com/sigadavid96",
   },
   aboutMe:

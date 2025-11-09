@@ -148,6 +148,21 @@ import { siteConfig } from "../config";
       >
         {siteConfig.title}
       </p>
+      <div
+        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium animate-fade-in animation-delay-600"
+      >
+        <span class="text-gray-600">Specialized in: </span>
+        <span
+          id="typing-text"
+          style={{ color: siteConfig.accentColor }}
+          class="font-semibold"
+        ></span>
+        <span
+          id="cursor"
+          style={{ color: siteConfig.accentColor }}
+          class="animate-blink">|</span
+        >
+      </div>
     </div>
   </div>
   <div
@@ -213,36 +228,6 @@ import { siteConfig } from "../config";
       )
     }
     {
-      siteConfig.social?.twitter && (
-        <a
-          href={siteConfig.social.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Twitter"
-          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
-          >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
-              <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
-            </>
-          </svg>
-        </a>
-      )
-    }
-    {
       siteConfig.social?.github && (
         <a
           href={siteConfig.social.github}
@@ -286,6 +271,17 @@ import { siteConfig } from "../config";
     }
   }
 
+  @keyframes blink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+
   .animate-fade-in {
     animation: fadeIn 0.8s ease-out forwards;
     opacity: 0;
@@ -302,4 +298,59 @@ import { siteConfig } from "../config";
   .animation-delay-600 {
     animation-delay: 0.6s;
   }
+
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
 </style>
+
+<script>
+  const typingTexts = [
+    "GenAI",
+    "Machine Learning",
+    "Deep Learning",
+    "Software Engineering",
+    "Data Science",
+    "Data Analytics",
+    "Data Engineering",
+  ];
+
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typingSpeed = 100;
+
+  function type() {
+    const typingElement = document.getElementById("typing-text");
+    if (!typingElement) return;
+
+    const currentText = typingTexts[textIndex];
+
+    if (isDeleting) {
+      typingElement.textContent = currentText.substring(0, charIndex - 1);
+      charIndex--;
+      typingSpeed = 50;
+    } else {
+      typingElement.textContent = currentText.substring(0, charIndex + 1);
+      charIndex++;
+      typingSpeed = 100;
+    }
+
+    if (!isDeleting && charIndex === currentText.length) {
+      // Pause at end of word
+      typingSpeed = 2000;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      textIndex = (textIndex + 1) % typingTexts.length;
+      typingSpeed = 500;
+    }
+
+    setTimeout(type, typingSpeed);
+  }
+
+  // Start typing animation after initial page load animation
+  setTimeout(() => {
+    type();
+  }, 1000);
+</script>
