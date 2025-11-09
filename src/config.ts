@@ -75,13 +75,6 @@ export const siteConfig = {
   ],
   projects: [
     {
-      name: "LSTM Time Series Forecasting",
-      description:
-        "Forecasted Apple's stock values based on Yahoo Finance 5+ years data API using LSTM architecture in PyTorch, achieving test MSE of ~6.8. Comprehensive tutorial explaining problem design, solution architecture, and implementation details for time series forecasting with deep learning.",
-      link: "https://github.com/sigadavid96/LSTM_TimeSeriesForecasting/blob/main/dsiga_LSTM_TimeSeriesForecasting_Tutorial.ipynb",
-      skills: ["PyTorch", "LSTM", "Time Series", "Deep Learning", "Statistics"],
-    },
-    {
       name: "DART: DifferentiAble pRompT",
       description:
         "Re-implemented and improved SOTA prompt-based sentence classifier using 16-shot learning, achieving ~93% accuracy on GLUE datasets. Enhanced the original model through regularized loss functions, AdamP optimizer, and comprehensive hyperparameter tuning.",
@@ -89,18 +82,11 @@ export const siteConfig = {
       skills: ["NLP", "Few-shot Learning", "Prompt Engineering", "PyTorch", "Research"],
     },
     {
-      name: "BERT from Scratch (Academic Project)",
+      name: "LSTM Time Series Forecasting",
       description:
-        "Developed complete BERT architecture from ground up for sentence classification. Pre-trained and fine-tuned on SST and CFIMDB datasets, achieving ~0.9 F1-score. Deep dive into transformer architecture, attention mechanisms, and transfer learning. (Code unavailable - academic work)",
-      link: "",
-      skills: ["Deep Learning", "NLP", "Transformers", "PyTorch", "BERT"],
-    },
-    {
-      name: "Deep Compression Blog (ICLR 2016)",
-      description:
-        "Technical blog post on ICLR 2016 best paper addressing mobility issues in deep learning through model compression. Covers pruning and quantization techniques for deployable models, contributing to ML reproducibility and education.",
-      link: "https://github.com/sigadavid96/DeepCompression/blob/master/_posts/Deep%20Learning%20-%20Deep%20Compression%20%28dsiga%29.md",
-      skills: ["Deep Learning", "Model Compression", "Research", "Technical Writing"],
+        "Forecasted Apple's stock values based on Yahoo Finance 5+ years data API using LSTM architecture in PyTorch, achieving test MSE of ~6.8. Comprehensive tutorial explaining problem design, solution architecture, and implementation details for time series forecasting with deep learning.",
+      link: "https://github.com/sigadavid96/LSTM_TimeSeriesForecasting/blob/main/dsiga_LSTM_TimeSeriesForecasting_Tutorial.ipynb",
+      skills: ["PyTorch", "LSTM", "Time Series", "Deep Learning", "Statistics"],
     },
     {
       name: "COVID-19 Impact on Small Businesses",
@@ -110,6 +96,20 @@ export const siteConfig = {
       skills: ["NLP", "Data Science", "Sentiment Analysis", "Twitter API", "Python"],
     },
     {
+      name: "Google Trends COVID Analysis",
+      description:
+        "Quantified COVID-19 social reactions through comparative study of social media vs WHO data. Engineered data pipeline utilizing Google Trends API and COVID cases data to analyze public sentiment across time and countries for policy assistance.",
+      link: "https://github.com/sigadavid96/Time-To-React-Google-Covid",
+      skills: ["Data Science", "APIs", "Data Pipeline", "Statistics", "Python"],
+    },
+    {
+      name: "Deep Compression Blog (ICLR 2016)",
+      description:
+        "Technical blog post on ICLR 2016 best paper addressing mobility issues in deep learning through model compression. Covers pruning and quantization techniques for deployable models, contributing to ML reproducibility and education.",
+      link: "https://github.com/sigadavid96/DeepCompression/blob/master/_posts/Deep%20Learning%20-%20Deep%20Compression%20%28dsiga%29.md",
+      skills: ["Deep Learning", "Model Compression", "Research", "Technical Writing"],
+    },
+    {
       name: "Movie Recommender Service (Academic Project)",
       description:
         "Deployed production movie recommendation system serving 1M users and 27K movies with 500ms inference time using collaborative filtering (SVD). Achieved 99.9% API availability with automated model retraining, containerized deployment, load balancing, and telemetry monitoring via Prometheus + Grafana. (Code unavailable - academic work)",
@@ -117,11 +117,11 @@ export const siteConfig = {
       skills: ["MLOps", "CI/CD", "Docker", "CircleCI", "Monitoring", "SVD"],
     },
     {
-      name: "Google Trends COVID Analysis",
+      name: "BERT from Scratch (Academic Project)",
       description:
-        "Quantified COVID-19 social reactions through comparative study of social media vs WHO data. Engineered data pipeline utilizing Google Trends API and COVID cases data to analyze public sentiment across time and countries for policy assistance.",
-      link: "https://github.com/sigadavid96/Time-To-React-Google-Covid",
-      skills: ["Data Science", "APIs", "Data Pipeline", "Statistics", "Python"],
+        "Developed complete BERT architecture from ground up for sentence classification. Pre-trained and fine-tuned on SST and CFIMDB datasets, achieving ~0.9 F1-score. Deep dive into transformer architecture, attention mechanisms, and transfer learning. (Code unavailable - academic work)",
+      link: "",
+      skills: ["Deep Learning", "NLP", "Transformers", "PyTorch", "BERT"],
     },
     {
       name: "ML Algorithms from Scratch (Academic Project)",
