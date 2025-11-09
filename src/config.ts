@@ -11,7 +11,7 @@ export const siteConfig = {
     github: "https://github.com/sigadavid96",
   },
   aboutMe:
-    "Senior Data Scientist at IBM with 7+ years of experience building production-grade AI/ML systems for Fortune 100 companies. Master's in Information Systems Management from Carnegie Mellon University (GPA: 3.77). Expert in GenAI, LLM applications, RAG systems, and MLOps. Led teams deploying self-service ML platforms serving 1,000+ data scientists, achieving 70% reduction in environment setup time. Specialized in compliance automation, forecasting pipelines, and AI-powered code generation with measurable business impact. Passionate about leveraging cutting-edge AI technologies to solve complex problems while mentoring teams on MLOps best practices.",
+    "Senior Data Scientist at IBM with 7+ years of comprehensive experience spanning AI Engineering, Data Science, and Data Analytics domains. Master's in Information Systems Management from Carnegie Mellon University (GPA: 3.77).\n\n**AI Engineering**: Building end-to-end production AI systems integrating Software Engineering, Machine Learning, and Generative AI. Architected self-service ML platforms serving 1,000+ data scientists, deployed LLM-powered compliance automation with RAG and LangChain, and led AI-powered code generation initiatives achieving 30% productivity gains.\n\n**Data Science**: Expert in ML, Deep Learning, and NLP with hands-on experience fine-tuning BERT and GPT models, implementing LSTM forecasting pipelines serving 60+ models, and developing sentiment analysis systems processing millions of data points. Strong foundation in statistical modeling and algorithm implementation.\n\n**Data Analytics**: Delivered high-impact analytics across Credit Risk (Wells Fargo - model validation, PD/LGD/EAD analysis, regulatory compliance) and Pharmaceutical HEOR (Mu Sigma - health economics outcomes research, pricing analytics, market access strategies). Specialized in translating complex data into actionable business insights.\n\nPassionate about leveraging cutting-edge AI technologies to solve real-world problems while mentoring teams on MLOps best practices and data-driven decision making.",
   skills: [
     "Python",
     "SQL",
@@ -62,10 +62,10 @@ export const siteConfig = {
       skills: ["NLP", "Few-shot Learning", "Prompt Engineering", "PyTorch", "Research"],
     },
     {
-      name: "BERT from Scratch",
+      name: "BERT from Scratch (Academic Project)",
       description:
-        "Developed complete BERT architecture from ground up for sentence classification. Pre-trained and fine-tuned on SST and CFIMDB datasets, achieving ~0.9 F1-score. Deep dive into transformer architecture, attention mechanisms, and transfer learning.",
-      link: "https://github.com/sigadavid96",
+        "Developed complete BERT architecture from ground up for sentence classification. Pre-trained and fine-tuned on SST and CFIMDB datasets, achieving ~0.9 F1-score. Deep dive into transformer architecture, attention mechanisms, and transfer learning. (Code unavailable - academic work)",
+      link: "",
       skills: ["Deep Learning", "NLP", "Transformers", "PyTorch", "BERT"],
     },
     {
@@ -83,10 +83,10 @@ export const siteConfig = {
       skills: ["NLP", "Data Science", "Sentiment Analysis", "Twitter API", "Python"],
     },
     {
-      name: "Movie Recommender Service (Production ML)",
+      name: "Movie Recommender Service (Academic Project)",
       description:
-        "Deployed production movie recommendation system serving 1M users and 27K movies with 500ms inference time using collaborative filtering (SVD). Achieved 99.9% API availability with automated model retraining, containerized deployment, load balancing, and telemetry monitoring via Prometheus + Grafana.",
-      link: "https://github.com/sigadavid96",
+        "Deployed production movie recommendation system serving 1M users and 27K movies with 500ms inference time using collaborative filtering (SVD). Achieved 99.9% API availability with automated model retraining, containerized deployment, load balancing, and telemetry monitoring via Prometheus + Grafana. (Code unavailable - academic work)",
+      link: "",
       skills: ["MLOps", "CI/CD", "Docker", "CircleCI", "Monitoring", "SVD"],
     },
     {
@@ -97,10 +97,10 @@ export const siteConfig = {
       skills: ["Data Science", "APIs", "Data Pipeline", "Statistics", "Python"],
     },
     {
-      name: "ML Algorithms from Scratch",
+      name: "ML Algorithms from Scratch (Academic Project)",
       description:
-        "Implemented core ML algorithms using only NumPy: Decision Trees with cross-entropy, NLP sentiment analyzer with logistic regression, single-layer neural network for handwritten letter classification, and Q-learning for mountain car problem.",
-      link: "https://github.com/sigadavid96",
+        "Implemented core ML algorithms using only NumPy: Decision Trees with cross-entropy, NLP sentiment analyzer with logistic regression, single-layer neural network for handwritten letter classification, and Q-learning for mountain car problem. (Code unavailable - academic work)",
+      link: "",
       skills: ["Machine Learning", "NumPy", "Algorithms", "Reinforcement Learning"],
     },
   ],
