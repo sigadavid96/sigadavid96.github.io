@@ -35,9 +35,11 @@ import { siteConfig } from "../config";
                 >
                   ★★ {section.title} ★★
                 </h3>
-                <p class="text-base sm:text-lg leading-relaxed text-gray-700">
-                  {section.content}
-                </p>
+                <div class="text-base sm:text-lg leading-relaxed text-gray-700 space-y-3">
+                  {section.content.split('\n\n').map((paragraph) => (
+                    <p>{paragraph}</p>
+                  ))}
+                </div>
               </div>
             ))
           }

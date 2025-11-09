@@ -19,26 +19,31 @@ export const siteConfig = {
     github: "https://github.com/sigadavid96",
   },
   aboutMe:
-    "Senior Data Scientist at IBM with 7+ years of comprehensive experience spanning AI Engineering, Data Science, and Data Analytics domains. Master's in Information Systems Management from Carnegie Mellon University (GPA: 3.77).",
+    "Senior Data Scientist at IBM with 7+ years building production-grade AI/ML systems for Fortune 100 companies. Carnegie Mellon University MS in Information Systems Management (GPA: 3.77, Distinction & Dean's List). Proven track record in GenAI, MLOps, and enterprise AI platform architecture.",
   aboutMeSections: [
     {
-      title: "AI Engineering",
+      title: "AI Engineering & MLOps",
       content:
-        "Building end-to-end production AI systems integrating Software Engineering, Machine Learning, and Generative AI. Architected self-service ML platforms serving 1,000+ data scientists, deployed LLM-powered compliance automation with RAG and LangChain, and led AI-powered code generation initiatives achieving 30% productivity gains.",
+        "Technical lead for two global teams (7-member dev team + 5-member MLOps team) building enterprise ML platforms for Fortune 100 insurance company. Dev team architected 'AI Enablement Zone' with governed Snowflake provisioning system enabling 1,000+ data scientists to access datasets in <1 minute. MLOps team maintains and scales the production ML platform infrastructure.\n\nBuilt full-stack ML pipelines with AWS (Lambda, SQS), Terraform, ReactJS, and GitLab CI/CD. Deployed production forecasting pipelines (60+ LGBM models, 10min runtime, 6x faster than baseline).\n\nEstablished RBAC governance and comprehensive testing frameworks (Pytest, Locust).",
     },
     {
-      title: "Data Science",
+      title: "Generative AI & LLM Applications",
       content:
-        "Expert in ML, Deep Learning, and NLP with hands-on experience fine-tuning BERT and GPT models, implementing LSTM forecasting pipelines serving 60+ models, and developing sentiment analysis systems processing millions of data points. Strong foundation in statistical modeling and algorithm implementation.",
+        "Deployed GPT-3.5 Turbo for automated code generation achieving 30% productivity boost (97% C# accuracy, 70% Gherkin accuracy).\n\nBuilt LLM-powered compliance automation extracting regulatory insights from unstructured documents using RAG + LangChain. Created conversational AI chatbot with FAISS vector database for direct data interaction.\n\nAchieved 80% time reduction for insurance underwriters through RAG-based document analysis, automating extraction of plots, tables, and text into structured databases.",
     },
     {
-      title: "Data Analytics",
+      title: "Machine Learning & Deep Learning",
       content:
-        "Delivered high-impact analytics across Credit Risk (Wells Fargo - model validation, PD/LGD/EAD analysis, regulatory compliance) and Pharmaceutical HEOR (Mu Sigma - health economics outcomes research, pricing analytics, market access strategies). Specialized in translating complex data into actionable business insights.",
+        "Fine-tuned BERT and GPT2 models on IBM CP4D platform for financial complaint classification, improving regulatory response speed. Optimized search algorithms using TF-IDF and cosine similarity to retrieve millions of records in <100ms.\n\nDeployed ensemble models (RF, LGBM, BERT, LSTM) achieving F1 score improvement from 0.72 to ~0.9. Built LSTM forecasting and BERT classification models from scratch.\n\nStrong foundation in PyTorch, TensorFlow, XGBoost, and model optimization.",
+    },
+    {
+      title: "Data Analytics & Risk Modeling",
+      content:
+        "Credit Risk: Monitored ML/statistical risk models for $30MM+ unsecured credit card portfolios at Wells Fargo using PSI, VSI, KS metrics. Built logistic regression and tree-based models with advanced segmentation and hyperparameter tuning.\n\nPharmaceutical HEOR: Generated Real-World Evidence for Fortune 100 pharma through survival analysis, Cox PH models, and KM outcomes on 1MM+ longitudinal records.\n\nAutomated 100+ work hours into minutes through Python/SAS pipeline serving 150+ colleagues.",
     },
   ],
   closingStatement:
-    "Passionate about leveraging cutting-edge AI technologies to solve real-world problems while mentoring teams on MLOps best practices and data-driven decision making.",
+    "Passionate about building scalable AI systems that deliver measurable business impact. Experienced in leading cross-functional teams, mentoring junior engineers on MLOps best practices, and translating complex technical solutions into stakeholder-ready insights.",
   skills: [
     "Python",
     "SQL",
@@ -139,7 +144,7 @@ export const siteConfig = {
       location: "New York, USA",
       bullets: [
         "ML Forecasting & Risk Monitoring: Designed and deployed scalable LGBM-based forecasting pipeline for mainframe resource utilization at Fortune 500 bank—reducing runtime from 1 hour to 10 minutes while supporting 60+ dynamic models across use cases",
-        "Technical Leadership: Serving as technical lead for 20-member global team building 'AI Enablement Zone', a self-service ML platform for enterprise insurance client. Spearheaded architecture and delivery of governed Snowflake provisioning system used by 1,000+ data scientists and ML engineers to auto-discover and access datasets securely in under a minute",
+        "Technical Leadership: Serving as technical lead for two global teams (7-member dev team + 5-member MLOps team) building 'AI Enablement Zone', a self-service ML platform for enterprise insurance client. Dev team architected governed Snowflake provisioning system used by 1,000+ data scientists to access datasets in <1 minute. MLOps team maintains and scales production ML platform infrastructure",
         "GenAI for Compliance Automation: Built LLM-powered systems to automate regulatory checklist generation from unstructured architectural documents using RAG and LangChain, creating AI agents that surface actionable compliance insights",
         "Deep Learning for Complaint Classification: Led end-to-end development and fine-tuning of BERT and GPT2 models on IBM's CP4D platform to enhance financial complaint classification accuracy for top U.S. bank, improving regulatory response speed",
         "AI-Powered Code Generation: Led initiative deploying GPT-3.5 Turbo for automated creation of Gherkin and Selenium C# code, boosting operational productivity by 30% for prominent banking client with 97%+ accuracy in C# and 70% accuracy in Gherkin code generation",
