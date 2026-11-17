@@ -1,16 +1,32 @@
 ---
 import { siteConfig } from "../config";
 import Org from "./Org.astro";
+const cert = siteConfig.certificate;
 ---
 
 <section id="education" class="panel" data-section="education" aria-labelledby="edu-h">
   <div class="wrap">
     <h2 id="edu-h" class="h2 chalk-ink write">Education</h2>
 
+    <article class="cert">
+      <h3 class="cert-h">
+        <Org k={cert.org} label="Carnegie Mellon University" href={cert.link} />
+      </h3>
+      <p class="cert-unit">{cert.school} <span class="cert-status">{cert.status}</span></p>
+      <p class="cert-prog">{cert.program}</p>
+      <p class="cert-meta"><span class="mono">{cert.dateRange}</span> · {cert.note}</p>
+      <p class="cert-sum">{cert.summary}</p>
+      <ul class="cert-courses" aria-label="Courses">
+        {cert.courses.map((c) => (
+          <li><span class="mono">{c.code}</span> {c.name}{c.now && <span class="by"> · this semester</span>}</li>
+        ))}
+      </ul>
+    </article>
+
     <div class="schools">
       {
         siteConfig.education.map((e) => (
-          <article class="school">
+          <article class="school" id={`edu-${e.org}`}>
             <h3 class="sname">
               <Org k={e.org} />
             </h3>
@@ -23,13 +39,23 @@ import Org from "./Org.astro";
                 <em>Coursework</em>{" "}
                 {e.coursework.map((c, i) => (
                   <>
-                    <a href={c.link} target="_blank" rel="noopener noreferrer">{c.name}</a>{i < e.coursework.length - 1 ? ", " : "."}
+                    <a href={c.link} target="_blank" rel="noopener noreferrer">{c.name}</a>{c.by && <span class="by"> with {c.by}</span>}{i < e.coursework.length - 1 ? ", " : "."}
                   </>
                 ))}
               </p>
             )}
-            {e.roles.length > 0 && (
+            {(e.ta.length > 0 || e.roles.length > 0) && (
               <ul class="roles">
+                {e.ta.length > 0 && (
+                  <li>
+                    Graduate TA, five times
+                    <ul class="ta">
+                      {e.ta.map((t) => (
+                        <li>{t.name}<span class="by"> with {t.by}</span></li>
+                      ))}
+                    </ul>
+                  </li>
+                )}
                 {e.roles.map((r) => (
                   <li>{r}</li>
                 ))}
@@ -46,6 +72,20 @@ import Org from "./Org.astro";
 </section>
 
 <style>
+  .cert {
+    border-top: 1px solid rgb(236 234 225 / 0.16);
+    padding: 1.75rem 0 clamp(2.5rem, 5vw, 3.5rem);
+    max-width: 62rem;
+  }
+  .cert p { margin: 0; }
+  .cert-h { font-family: var(--f-display); font-weight: 400; font-size: 1.35rem; line-height: 1.4; margin: 0 0 0.5rem -0.3em; }
+  .cert-unit { font-style: italic; color: var(--chalk-2); }
+  .cert-status { font-style: normal; color: var(--chalk-3); margin-left: 0.35em; }
+  .cert-prog { font-family: var(--f-display); font-size: 1.2rem; margin-top: 0.7rem !important; }
+  .cert-meta { color: var(--chalk-2); font-size: 0.95rem; margin-top: 0.25rem !important; }
+  .cert-sum { color: var(--chalk-2); margin-top: 0.6rem !important; }
+  .cert-courses { list-style: none; padding: 0; margin: 0.9rem 0 0; display: flex; flex-wrap: wrap; gap: 0.35rem 1.75rem; color: var(--chalk-2); font-size: 0.98rem; }
+  .cert-courses .mono { color: var(--chalk-3); margin-right: 0.35em; }
   .schools {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -59,9 +99,13 @@ import Org from "./Org.astro";
   .detail { color: var(--chalk-2); font-size: 0.92rem; margin-top: 0.25rem !important; }
   .cw { margin-top: 1.4rem !important; line-height: 1.65; color: var(--chalk-2); }
   .cw em { color: var(--chalk); }
+  .by { font-family: var(--f-display); font-style: italic; color: var(--chalk); }
   .roles { margin: 1rem 0 0; padding-left: 1.1rem; color: var(--chalk-2); }
   .roles li { margin: 0.3rem 0; }
   .roles li::marker { content: "– "; }
+  .ta { list-style: none; margin: 0.35rem 0 0.6rem; padding-left: 0.2rem; font-size: 0.98rem; }
+  .ta li { margin: 0.25rem 0; }
+  .ta li::marker { content: none; }
   .consult { margin-top: 1.4rem !important; color: var(--chalk-2); line-height: 1.7; }
 
   @media (max-width: 860px) {

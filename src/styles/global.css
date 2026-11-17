@@ -180,6 +180,11 @@ a:hover { text-decoration-color: var(--chalk); }
 .org-logo img { display: block; width: auto; filter: url(#chalk-soft); }
 .org-logo::before { inset: 0.02em -0.04em; }
 .org-logo[data-hue2]::after { bottom: -0.16em; }
+/* in-page jumps land clear of the edge, and the arrived entry's smear pulses once */
+[id^="work-"], [id^="edu-"] { scroll-margin-top: 2.5rem; }
+:target .org::before { animation: smear-pulse 1.6s var(--ease-out); }
+@keyframes smear-pulse { 0%, 30% { opacity: 1; transform: skewX(-6deg) rotate(-0.8deg) scale(1.12); } 100% { opacity: 0.62; transform: skewX(-6deg) rotate(-0.8deg); } }
+@media (prefers-reduced-motion: reduce) { :target .org::before { animation: none; opacity: 0.85; } }
 a.org:hover::before, .org:hover::before { opacity: 0.85; transform: skewX(-6deg) rotate(-0.8deg) scale(1.04); }
 
 /* ── Hand-drawn chalk marks ─────────────────────────────────────────── */

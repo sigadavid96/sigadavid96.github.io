@@ -103,7 +103,7 @@ components:
 
 **Creative North Star: "The Seminar Blackboard"**
 
-The whole site is one deep slate board after a good CMU seminar: a derivation of a person, set in Computer Modern and rendered as chalk. Ink is a single warm chalk white in three strengths; the board carries grain, a faint ruled texture, and half-erased equations left from the previous lecture. Content reads like a paper written on a board: an abstract, a notation table, lemmas with boxed results, numbered references, and office hours.
+The whole site is one deep slate board after a good CMU seminar: a derivation of a person, set in Computer Modern and rendered as chalk. Ink is a single warm chalk white in three strengths; the board carries grain, a faint ruled texture, and half-erased equations left from the previous lecture. Content reads like a paper written on a board: an abstract, a notation table, named projects with boxed results, honors, cited AI projects, and office hours.
 
 Density is low and the board is mostly unprinted. Each section is a full-width panel separated by a hairline seam, with one display-serif heading that writes itself on from left to right. Ornament is never decorative: every mark is a piece of mathematical notation (an underbrace, a box around a result, a therefore sign, an arrow) drawn as a chalk stroke.
 
@@ -155,12 +155,12 @@ A monochrome chalk-on-slate board whose only colour is the institution code.
 - **Headline** (400, clamp(2.25rem, 4.6vw, 3.75rem), 1.05, balanced): one per panel, chalk-filtered, writes on. An optional italic subtitle sits beneath at 0.42em in worn chalk.
 - **Math** (400, clamp(1.55rem, 3.4vw, 3.1rem), 1.1): typeset expressions, with sub/superscripts at 0.55em.
 - **Title** (400, clamp(1.7rem, 2.6vw, 2.2rem), 1.15): institution names, school names, course names and reference titles (course and reference titles run in their own clamps of the same role).
-- **Body** (400, 1.125rem, 1.6): CMU Concrete; prose capped at 68ch, lemma bodies at 70ch.
+- **Body** (400, 1.125rem, 1.6): CMU Concrete; prose capped at 68ch, project bodies at 70ch.
 - **Annotation** (italic, clamp(0.85rem, 1vw, 1rem), 1.3): notes under underbraces, venue lines, subtitles, run-in leads such as "Touches" or "Coursework".
 - **Label** (400, 0.92em, tabular numerals): CMU Typewriter for course codes, date ranges, citation keys and the colophon.
 
 ### Named Rules
-**The Typeset Not Styled Rule.** Every face is Computer Modern. Emphasis is italic or bold Serif as in a paper (Lemma heads in bold, lemma names in italic); never uppercase tracking, never a sans.
+**The Typeset Not Styled Rule.** Every face is Computer Modern. Emphasis is italic or bold Serif as in a paper (project names in bold Serif, key skills in italic Serif); never uppercase tracking, never a sans.
 
 **The Typewriter Means Data Rule.** CMU Typewriter is used only for codes, dates, keys and numbers. It never sets prose or navigation.
 
@@ -168,7 +168,7 @@ A monochrome chalk-on-slate board whose only colour is the institution code.
 
 The board is full-bleed; content sits in a centred 78rem column with a fluid gutter (clamp(1rem, 4vw, 4rem)). Each section is a panel with fluid vertical padding (clamp(4.5rem, 9vw, 8rem)), separated from the next by a 1px seam. The hero fills the first viewport above the tray (100svh minus the tray height) and sets name, role line, objective, constraints and contact flush left.
 
-Inside panels, structure is a two-column grid that collapses to one column at 860px: Abstract (1.35fr prose, 1fr notation table), Work (13 to 19rem meta column, then lemmas), References and Education (two equal columns). Lists are separated by hairline seams rather than enclosed. At 640px the objective breaks into lines at marked break points and only the first ghost equation remains.
+Inside panels, structure is a two-column grid that collapses to one column at 860px: Abstract (1.35fr prose, 1fr notation table), Work (13 to 19rem meta column, then projects), Honors, Projects and Education (two equal columns). Lists are separated by hairline seams rather than enclosed. At 640px the objective breaks into lines at marked break points and only the first ghost equation remains.
 
 The fixed chalk tray (4.25rem plus safe area) occupies the bottom of every viewport; the body reserves its height as bottom padding. The ruled guide lines repeat every 3.2rem as board texture.
 
@@ -204,8 +204,8 @@ Two buttons to the right of the sections: Chalk and Erase, each a small drawn ob
 ### Links
 Inherit their colour; a 1px underline at 40% chalk sits 0.22em below and brightens to full chalk on hover (0.3s). Focus everywhere is a 2px dashed chalk outline offset 4px. The office-hours email is the one display-size link with a 2px underline.
 
-### Lemma and Result
-Each role lists lemmas as run-in paragraphs: bold Serif "Lemma i.j", an italic name in parentheses, then Concrete body. The role closes with a therefore sign (∴) in worn chalk and the result in Serif, enclosed in a hand-drawn chalk box.
+### Project and Result
+Each role lists projects: a bold Serif project name, its key skills on the next line in italic Serif separated by middle dots, then short Concrete bullets marked with an en dash. A patent sits under its project as a citation behind a 1px rule. (This replaced an earlier "Lemma i.j" run-in format the owner found hard to scan.) The role closes with a therefore sign (∴) in worn chalk and the result in Serif, enclosed in a hand-drawn chalk box.
 
 ### Reference Entry
 A bibliography item: Typewriter key in brackets (faded chalk), Serif title with an italic venue beneath, and one recipe line in worn chalk ending in an arrow and the result in italic chalk.

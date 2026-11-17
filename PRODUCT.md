@@ -14,11 +14,11 @@ Secondary (inferred): technical recruiters screening for Senior / Staff Data Sci
 
 ## Product Purpose
 
-Personal portfolio of Davidson Siga, Senior Data Scientist. It exists to make the case that he builds production LLM and ML systems at scale, with research depth (CMU coursework, re-implemented SOTA papers, BERT from scratch) and an ongoing CMU SCS Graduate Certificate in Generative AI & LLMs. Success: an AI leader or researcher reaches out, or reads far enough to remember him.
+Personal portfolio of Davidson Siga, Senior Data Scientist. It exists to make the case that he builds production LLM and ML systems at scale, with research depth (CMU coursework, re-implemented SOTA papers, BERT from scratch). He is working full-time, not a student; the CMU SCS Graduate Certificate is an online, part-time course taken alongside work and appears only in Education, never as "currently studying". Success: an AI leader or researcher reaches out, or reads far enough to remember him.
 
 ## Positioning
 
-An applied-AI engineer who ships agentic LLM pipelines into regulated enterprise production (patents pending, eight-figure annual impact) and keeps one foot in research: re-implementing papers, building models from scratch, and continuing graduate study at CMU's School of Computer Science.
+An applied-AI engineer who ships agentic LLM pipelines into regulated enterprise production (patents pending, eight-figure annual impact) and keeps one foot in research: re-implementing papers and building models from scratch.
 
 ## Operating Context
 

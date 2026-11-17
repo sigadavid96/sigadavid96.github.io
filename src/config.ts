@@ -30,28 +30,40 @@ export const siteConfig = {
   name: "Davidson Siga",
   title: "Senior Data Scientist · Applied AI & LLM Systems",
   description:
-    "Davidson Siga, Senior Data Scientist at Humana. Builds agentic LLM systems in production. Carnegie Mellon MISM, now in the CMU School of Computer Science Graduate Certificate in Generative AI & LLMs.",
+    "Davidson Siga, Senior Data Scientist at Humana. Builds agentic LLM systems in production. Carnegie Mellon MISM.",
   social: {
     email: "sigadavid96@gmail.com",
     linkedin: "https://www.linkedin.com/in/davidsonsiga",
     github: "https://github.com/sigadavid96",
   },
 
+  // The four facts a visitor should read first; each links to its detail.
+  mainResults: [
+    { text: "Agentic LLM pipelines at Humana delivering $20M+ in annual savings", href: "#work-humana" },
+    { text: "A U.S. patent application filed for LLM-explained anomaly detection, with 2 more pending", href: "#patent" },
+    { text: "Led a global team of 10 at IBM that shipped a year of features in 3 months", href: "#work-ibm" },
+    { text: "Carnegie Mellon Master's with Distinction, and graduate TA five times", href: "#edu-cmu" },
+  ],
+
   abstract: [
-    "At Humana, I'm a Senior Data Scientist building LLM systems for production: agentic document pipelines, retrieval, evaluation and drift monitoring. I've worked in machine learning for over seven years, from survival analysis to LangGraph agents.",
-    "I like to understand models from the inside, so I re-implement papers and build models from scratch. Since August 2026 I've been studying LLMs, LLM systems and multimodal learning at Carnegie Mellon's School of Computer Science.",
+    "Senior Data Scientist at Humana, building agentic LLM systems that run in production. That work delivers $20M+ in annual savings and has 2 patents pending, with 1 more submitted.",
+    "I started in data in 2018, right after a Bachelor's in Computer Science at KIIT. Two years at Mu Sigma on pharma analytics, then a year of credit risk modeling at Wells Fargo. In 2021 I went to Carnegie Mellon for a Master's in Information Systems Management, focused on ML and NLP, and graduated with Distinction. Then three years at IBM shipping RAG agents, LLM code generation and an ML platform used by 1,000+ data scientists. I joined Humana in January 2026.",
+    "Outside work I re-implement papers and build models from scratch, BERT included.",
   ],
   business: "Healthcare, banking, insurance, credit risk and pharma research.",
 
-  now: {
+  // Online, part-time, taken alongside full-time work. Lives in Education only.
+  certificate: {
     org: "cmu" as OrgKey,
     school: "School of Computer Science",
     program: "Graduate Certificate, Generative AI & Large Language Models",
     dateRange: "Aug 2026 – Dec 2027",
     link: "https://www.cmu.edu/online/generative-ai-llms",
     note: "30% scholarship",
+    status: "(Ongoing, Online & Part Time)",
+    summary: "Program designed by Graham Neubig.",
     courses: [
-      { code: "11-967", name: "Large Language Models: Methods and Applications" },
+      { code: "11-967", name: "Large Language Models: Methods and Applications", now: true },
       { code: "11-968", name: "Large Language Model Systems" },
       { code: "11-977", name: "Multimodal Machine Learning" },
     ],
@@ -64,22 +76,48 @@ export const siteConfig = {
       dateRange: "Jan 2026 – now",
       location: "New York",
       business: "Healthcare quality, cost and payment integrity",
-      lemmas: [
+      projects: [
         {
           name: "Document extraction with LLM agents",
-          text: "Designed an on-prem pipeline for unstructured documents: OCR, then LangGraph agents, a self-healing step and a rubric validator. It runs at 98%+ precision. We took it from POC to production in under three months and scaled it to 15M+ documents on Databricks and PySpark.",
-        },
-        {
-          name: "Evaluation and drift monitoring",
-          text: "Built golden datasets, a tuning framework that never touches the holdout set, and automated data and model drift tracking in production. Cleared model-risk governance before launch.",
+          skills: ["LangGraph", "OCR", "Databricks", "PySpark"],
+          points: [
+            "Designed an on-prem pipeline for unstructured documents: OCR, then LangGraph agents, a self-healing step and a rubric validator",
+            "Runs at 98%+ precision",
+            "Took it from POC to production in under 3 months",
+            "Scaled to 15M+ documents",
+          ],
         },
         {
           name: "Unsupervised anomaly detection",
-          text: "Clustered about 2B records by behavior with SparkML to flag anomalies.",
+          skills: ["Representation learning", "Ensemble outlier detection", "SparkML", "LLMs"],
+          points: [
+            "Learned representations give each entity a baseline against its peers",
+            "An ensemble of outlier detectors scores about 2B records on SparkML",
+            "An LLM explains each flag in plain language, grounded in the model's attribution signals, so every decision stays auditable",
+          ],
+          patent: {
+            title: "Anomaly Detection and Action Recommendation Using Time Series Entity Data",
+            number: "19/750,840",
+            filed: "Jul 22, 2026",
+            role: "Second-named inventor",
+          },
+        },
+        {
+          name: "Evaluation and drift monitoring",
+          skills: ["Golden datasets", "Model tuning", "Drift monitoring"],
+          points: [
+            "Built golden datasets and a tuning framework that never touches the holdout set",
+            "Automated data and model drift tracking in production",
+            "Cleared model-risk governance before launch",
+          ],
         },
         {
           name: "Topic modeling for agent routing",
-          text: "Trained an NLP topic model on about 25M past requests to improve intent routing for a LangGraph agent.",
+          skills: ["NLP", "Topic modeling", "LangGraph"],
+          points: [
+            "Trained a topic model on about 25M past requests",
+            "Improves intent routing for a LangGraph agent",
+          ],
         },
       ],
       result: "$20M+ annual savings in production · 2 patents pending · 1 submitted",
@@ -90,25 +128,44 @@ export const siteConfig = {
       dateRange: "Feb 2023 – Jan 2026",
       location: "New York",
       business: "Enterprise AI for banking and insurance clients",
-      lemmas: [
+      projects: [
+        {
+          name: "Self-service ML platform",
+          skills: ["AWS Lambda", "SQS", "Terraform", "React", "GitLab CI/CD", "GitHub Copilot"],
+          points: [
+            "Led a global team of 10",
+            "Gives 1,000+ data scientists governed access to Snowflake",
+            "Moved the team onto GitHub Copilot and delivered a year's worth of planned features in 3 months",
+            "Dev to prod with zero bugs, with RBAC and Pytest and Locust test suites",
+          ],
+        },
         {
           name: "RAG agents",
-          text: "Built LangChain RAG agents that turn long unstructured documents into checklists and extract plots, tables and text into queryable stores. Finding information got 80% faster.",
+          skills: ["LangChain", "RAG", "Document parsing"],
+          points: [
+            "Turn long unstructured documents into checklists",
+            "Extract plots, tables and text into queryable stores",
+            "Finding information got 80% faster",
+          ],
         },
         {
           name: "LLM code generation",
-          text: "Used GPT-3.5 Turbo to generate C# (97%+ accuracy) and Gherkin (70%). Team productivity went up 30%.",
-        },
-        {
-          name: "Self-service ML platform",
-          text: "Led an enterprise platform that gives 1,000+ data scientists governed access to Snowflake. Built with AWS Lambda and SQS, Terraform, React, GitLab CI/CD and RBAC, tested with Pytest and Locust.",
+          skills: ["GPT-3.5 Turbo", "Prompt engineering"],
+          points: [
+            "Generated C# at 97%+ accuracy and Gherkin at 70%",
+            "Team productivity went up 30%",
+          ],
         },
         {
           name: "Forecasting and search",
-          text: "Replaced static alerting on 150+ mainframe applications with LightGBM forecasts, retrained weekly and run daily. Also built a search that returns results from millions of records in under 100 ms.",
+          skills: ["LightGBM", "TF-IDF", "Watson ML"],
+          points: [
+            "Replaced static alerting on 150+ mainframe applications with LightGBM forecasts, retrained weekly and run daily",
+            "Search that returns results from millions of records in under 100 ms",
+          ],
         },
       ],
-      result: "1,000+ data scientists on the platform · +30% team productivity from LLM codegen",
+      result: "Led a global team of 10 · a year of features in 3 months, zero bugs · 1,000+ data scientists on the platform",
     },
     {
       org: "ibm" as OrgKey,
@@ -116,10 +173,14 @@ export const siteConfig = {
       dateRange: "May – Aug 2022",
       location: "New York",
       business: "Customer service analytics for a Fortune 100 bank",
-      lemmas: [
+      projects: [
         {
           name: "Text classification ensembles",
-          text: "Built six sentiment and text classification models on conversational text using TF-IDF, Word2Vec, LightGBM, BERT and LSTMs.",
+          skills: ["BERT", "LSTM", "Word2Vec", "LightGBM"],
+          points: [
+            "Six sentiment and text classification models on conversational text",
+            "Ensembles of TF-IDF, Word2Vec, LightGBM, BERT and LSTM models",
+          ],
         },
       ],
       result: "F1 0.72 → ≈0.90",
@@ -130,10 +191,14 @@ export const siteConfig = {
       dateRange: "Jun 2020 – May 2021",
       location: "Bangalore",
       business: "Consumer credit risk",
-      lemmas: [
+      projects: [
         {
           name: "Credit risk models",
-          text: "Built and monitored logistic and tree-based risk models for $30M+ unsecured credit card portfolios, tracking stability with PSI, VSI and KS.",
+          skills: ["Logistic regression", "Tree models", "PSI / VSI / KS"],
+          points: [
+            "Built and monitored risk models for $30M+ unsecured credit card portfolios",
+            "Tracked model stability with PSI, VSI and KS",
+          ],
         },
       ],
       result: "Team error rate 15% → 0% after I introduced a QA checklist",
@@ -144,17 +209,25 @@ export const siteConfig = {
       dateRange: "Jul 2018 – May 2020",
       location: "Bangalore",
       business: "Pharma real-world evidence for Fortune 100 clients",
-      lemmas: [
+      projects: [
         {
           name: "Survival analysis",
-          text: "Built Cox PH and Kaplan–Meier pipelines on 1M+ rows of longitudinal data. Automating them cut 100+ hours of work to minutes for 150+ colleagues.",
+          skills: ["Cox PH", "Kaplan–Meier", "Python", "SAS"],
+          points: [
+            "Pipelines on 1M+ rows of longitudinal data",
+            "Automation cut 100+ hours of work to minutes for 150+ colleagues",
+          ],
         },
         {
           name: "NLP on forum text",
-          text: "Analyzed public online forums with NLP. Also grew a team of 15+.",
+          skills: ["NLP", "Text mining"],
+          points: [
+            "Analyzed public online forums with NLP",
+            "Grew a team of 15+",
+          ],
         },
       ],
-      result: "CEO's Interstellar Award · Spot Award",
+      result: "Interstellar Award · Spot Award · Hackathon winner",
     },
   ],
 
@@ -234,17 +307,21 @@ export const siteConfig = {
       dateRange: "2021 – 2022",
       detail: "GPA 3.77 · Graduated with Distinction",
       coursework: [
-        { name: "Machine Learning (10-601)", link: "http://www.cs.cmu.edu/~mgormley/courses/10601-s20/schedule.html" },
+        { name: "Intro to ML (10-601)", by: "Tom Mitchell & Matt Gormley", link: "http://www.cs.cmu.edu/~mgormley/courses/10601-s20/schedule.html" },
         { name: "ML for Large Datasets", link: "https://10605.github.io/" },
-        { name: "Deep Learning", link: "https://deeplearning.cs.cmu.edu/F21/index.html" },
+        { name: "Deep Learning (11-785)", by: "Bhiksha Raj", link: "https://deeplearning.cs.cmu.edu/F21/index.html" },
         { name: "Advanced NLP", link: "https://phontron.com/class/anlp2022/description.html" },
         { name: "ML in Production", link: "https://ckaestne.github.io/seai/F2022/" },
         { name: "Practical Data Science", link: "http://www.datasciencecourse.org/" },
       ],
-      roles: [
-        "Graduate TA: Data Science, Data Mining, Decision Analytics, Disruptive Tech, OOP",
-        "Vice President, Heinz Analytics Club",
+      ta: [
+        { name: "Data Science for Product Managers (95-851)", by: "David Steier" },
+        { name: "Data Mining (95-791)", by: "Gabriela Gongora-Svartzman" },
+        { name: "Decision Analytics for Business and Policy (94-867)", by: "Peter Zhang" },
+        { name: "Managing Disruptive Technologies (95-723)", by: "Ananya Sen" },
+        { name: "Object-Oriented Programming in Java (95-712)", by: "Neelam Dwivedi" },
       ],
+      roles: ["Vice President, Heinz Analytics Club"],
       consult: { org: "verizon" as OrgKey, text: "Student consultant: built an XGBoost classifier that flags suspicious sources for a cybersecurity team, with 87% accuracy" },
     },
     {
@@ -254,9 +331,18 @@ export const siteConfig = {
       dateRange: "2014 – 2018",
       detail: "GPA 3.76",
       coursework: [],
+      ta: [],
       roles: [],
-      consult: { org: "aiesec" as OrgKey, text: "Volunteered on UN Sustainable Development Goals campaigns and was named one of AIESEC India's Top 30 members" },
+      consult: { org: "aiesec" as OrgKey, text: "Team Leader of Marketing and Innovation for the Bhubaneswar chapter, running UN Sustainable Development Goals campaigns. Named in AIESEC India's Top 20 of 2,500+ members" },
     },
+  ],
+
+  honors: [
+    { date: "Sep 2026", title: "Humana Inventor", org: "humana" as OrgKey, issuer: "Humana", text: "One of 15 people at Humana recognized for submitting patent applications in Q2 2026." },
+    { date: "Dec 2019", title: "Interstellar Award", org: "musigma" as OrgKey, issuer: "Mu Sigma", text: "For one of the most innovative and impactful projects at Mu Sigma in 2019." },
+    { date: "Dec 2019", title: "Spot Award", org: "musigma" as OrgKey, issuer: "Mu Sigma", text: "For contributions to the team and to client engagement." },
+    { date: "Jul 2018", title: "Winner, Mu Sigma Hackathon", org: "musigma" as OrgKey, issuer: "Mu Sigma", text: "Data-driven decision making with Python and machine learning." },
+    { date: "Jun 2017", title: "AIESEC India's Top 20", org: "aiesec" as OrgKey, issuer: "AIESEC India", text: "Out of 2,500+ members, as Team Leader of Marketing and Innovation in Bhubaneswar." },
   ],
 
   toolbox: [

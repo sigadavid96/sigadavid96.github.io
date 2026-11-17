@@ -13,7 +13,12 @@ const style = `--hue:${o.hue};${o.hue2 ? `--hue2:${o.hue2};` : ""}`;
 const text = label ?? o.name;
 const mark = logo && o.logo ? o.logo : null;
 const Tag = href ? "a" : "span";
-const linkProps = href ? { href, target: "_blank", rel: "noopener noreferrer" } : {};
+const external = href ? !href.startsWith("#") : false;
+const linkProps = href
+  ? external
+    ? { href, target: "_blank", rel: "noopener noreferrer" }
+    : { href, title: `Jump to ${o.name}` }
+  : {};
 ---
 
 <Tag class:list={["org", mark && "org-logo"]} style={style} data-hue2={o.hue2 ? "" : undefined} {...linkProps}>

@@ -5,24 +5,40 @@ import Brace from "./Brace.astro";
 ---
 
 <header id="top" class="hero panel" data-section="top">
-  <div class="ghost" aria-hidden="true" style="top:9%; right:-4%; font-size:clamp(2rem,4vw,3.6rem); transform:rotate(-2deg)">
-    softmax(<span>QK</span><sup>⊤</sup>/√<span>d</span><sub>k</sub>)<span>V</span>
-  </div>
   <div class="ghost" aria-hidden="true" style="bottom:5%; right:-3%; font-size:clamp(1.6rem,3vw,2.6rem); transform:rotate(1.5deg)">
     p(x<sub>t</sub> | x<sub>&lt;t</sub>) = ∏ softmax(W h<sub>t</sub>)
   </div>
-  <div class="ghost" aria-hidden="true" style="top:44%; right:6%; font-size:clamp(1.3rem,2.2vw,2rem); transform:rotate(-1deg)">
-    ∇<sub>𝜃</sub> E<sub>q</sub>[log p − log q] + KL(q || p)
-  </div>
 
   <div class="wrap hero-grid">
+    <div class="intro">
     <h1 class="name chalk-ink write">{siteConfig.name}</h1>
 
     <p class="role">
-      Senior Data Scientist at <Org k="humana" />, building agentic LLM systems.
-      Currently studying generative AI &amp; LLMs at
-      <Org k="cmu" label="CMU School of Computer Science" href={siteConfig.now.link} />.
+      Senior Data Scientist at <Org k="humana" href="#work-humana" />, building
+      agentic LLM systems in production. Previously at
+      <Org k="ibm" href="#work-ibm" />, <Org k="wellsfargo" href="#work-wellsfargo" /> and
+      <Org k="musigma" href="#work-musigma" />. Learnt AI at
+      <Org k="cmu" label="CMU" href="#edu-cmu" /> and <Org k="kiit" href="#edu-kiit" />.
     </p>
+
+      <ul class="contact" aria-label="Contact">
+        <li><a href={`mailto:${siteConfig.social.email}`}>{siteConfig.social.email}</a></li>
+        <li><a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </div>
+
+    <aside class="results" aria-labelledby="results-h">
+      <h2 id="results-h" class="res-h">Main results</h2>
+      <ul class="res-list">
+        {siteConfig.mainResults.map((m) => (
+          <li><a href={m.href}>{m.text}<span class="go" aria-hidden="true">{"\u00a0"}→</span></a></li>
+        ))}
+      </ul>
+      <svg class="res-box draw" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" style="--len:100;--delay:0.6s">
+        <path pathLength="100" vector-effect="non-scaling-stroke" d="M1 2.5 C30 0.8 70 1.2 99 2 C99.5 15 99.3 27 98.8 38 C70 39.3 30 39.5 1.4 38.8 C0.5 27 0.7 14 1.2 1.8" />
+      </svg>
+    </aside>
 
     <div class="objective chalk-soft" role="math" aria-label="theta star equals the argmin over theta of research loss plus lambda times production loss">
       <span class="lhs">𝜃<sup>*</sup> =</span>
@@ -31,7 +47,7 @@ import Brace from "./Brace.astro";
       <span class="term">
         <span class="tex"><i>L</i><sub>research</sub>(𝜃)</span>
         <Brace />
-        <span class="note">CMU SCS, GenAI &amp; LLMs, ’26–’27</span>
+        <span class="note">re-implemented papers, models from scratch</span>
       </span>
       <span class="op">+</span>
       <span class="br" aria-hidden="true"></span>
@@ -53,15 +69,9 @@ import Brace from "./Brace.astro";
     <p class="st">
       <span class="st-k">s.t.</span>
       <span>years in ML ≥ 7,</span>
-      <span>patent filings = 3,</span>
-      <span>CMU courses in progress = 3</span>
+      <span>patent filings = 3</span>
     </p>
 
-    <ul class="contact" aria-label="Contact">
-      <li><a href={`mailto:${siteConfig.social.email}`}>{siteConfig.social.email}</a></li>
-      <li><a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      <li><a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer">GitHub</a></li>
-    </ul>
   </div>
 </header>
 
@@ -74,6 +84,35 @@ import Brace from "./Brace.astro";
     padding-bottom: clamp(3rem, 7vh, 5rem);
   }
   .hero-grid { width: 100%; }
+  @media (min-width: 960px) {
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      column-gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: center;
+    }
+    .hero-grid > :not(.intro):not(.results) { grid-column: 1 / -1; }
+    .intro .role { margin-bottom: 0; }
+    .intro .contact { margin-bottom: 0; }
+    .results { margin: 0; }
+    .objective { margin-top: clamp(2rem, 5vh, 3.25rem); }
+  }
+
+  .results { position: relative; padding: 1.5rem 1.75rem 1.6rem; margin: 0 0 clamp(2.75rem, 6vh, 4rem); max-width: 36rem; }
+  .res-h { font-family: var(--f-display); font-weight: 700; font-size: 1.15rem; margin: 0 0 0.8rem; }
+  .res-list { list-style: none; margin: 0; padding: 0; }
+  .res-list li { position: relative; padding-left: 1.1rem; margin: 0.55rem 0; line-height: 1.45; }
+  .res-list li::before { content: "–"; position: absolute; left: 0; color: var(--chalk-2); }
+  .res-list a { text-decoration: none; background-image: linear-gradient(var(--chalk), var(--chalk)); background-size: 0 1px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size 0.45s var(--ease-out); }
+  .res-list a:hover { background-size: 100% 1px; }
+  .res-list .go { color: var(--chalk-2); }
+  .res-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+  .res-box path { fill: none; stroke: var(--chalk); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; filter: url(#chalk-line); opacity: 0.8; }
+  @media (max-width: 640px) {
+    .results { padding: 1.2rem 1.2rem 1.3rem; }
+    .intro .role { margin-bottom: 0; }
+    .intro .contact { margin-bottom: 2rem; }
+  }
   .name {
     font-family: var(--f-display);
     font-weight: 400;
@@ -85,7 +124,7 @@ import Brace from "./Brace.astro";
   .role {
     font-size: clamp(1.15rem, 1.7vw, 1.45rem);
     line-height: 1.55;
-    max-width: 40ch;
+    max-width: 44ch;
     color: var(--chalk-2);
     margin: 0 0 clamp(2.75rem, 6vh, 4.5rem);
   }
@@ -142,7 +181,7 @@ import Brace from "./Brace.astro";
   .st-k { font-style: normal; color: var(--chalk); }
 
   .contact {
-    list-style: none; padding: 0; margin: clamp(2.5rem, 6vh, 4rem) 0 0;
+    list-style: none; padding: 0; margin: 1.5rem 0 0;
     display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem;
     font-family: var(--f-display); font-size: 1.1rem;
   }
