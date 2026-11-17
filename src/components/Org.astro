@@ -1,0 +1,37 @@
+---
+import { orgs, type OrgKey } from "../config";
+
+interface Props {
+  k: OrgKey;
+  label?: string;
+  href?: string;
+  logo?: boolean;
+}
+const { k, label, href, logo } = Astro.props;
+const o = orgs[k];
+const style = `--hue:${o.hue};${o.hue2 ? `--hue2:${o.hue2};` : ""}`;
+const text = label ?? o.name;
+const mark = logo && o.logo ? o.logo : null;
+const Tag = href ? "a" : "span";
+const linkProps = href ? { href, target: "_blank", rel: "noopener noreferrer" } : {};
+---
+
+<Tag class:list={["org", mark && "org-logo"]} style={style} data-hue2={o.hue2 ? "" : undefined} {...linkProps}>
+  {
+    mark ? (
+      <>
+        <img
+          src={mark.src}
+          width={mark.w}
+          height={mark.h}
+          alt={mark.withName ? "" : o.name}
+          style={`height:${mark.em}em`}
+          decoding="async"
+        />
+        {mark.withName && <span class="org-name">{text}</span>}
+      </>
+    ) : (
+      text
+    )
+  }
+</Tag>

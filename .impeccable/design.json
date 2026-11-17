@@ -1,0 +1,510 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-17T20:22:09+00:00",
+  "title": "Design System: Davidson Siga",
+  "extensions": {
+    "colorMeta": {
+      "chalk": {
+        "role": "primary",
+        "displayName": "Chalk White",
+        "canonical": "oklch(93.6% 0.012 96.4)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262520",
+          "#44423c",
+          "#63615a",
+          "#84827a",
+          "#a7a59e",
+          "#cbc9c3",
+          "#efeeeb"
+        ]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Seminar Slate",
+        "canonical": "oklch(24.4% 0.011 176.2)",
+        "tonalRamp": [
+          "#090c0b",
+          "#212625",
+          "#3d4442",
+          "#5b6361",
+          "#7c8482",
+          "#9fa7a5",
+          "#c4cbc9",
+          "#ecefee"
+        ]
+      },
+      "slate-lo": {
+        "role": "neutral",
+        "displayName": "Ledge Slate",
+        "canonical": "oklch(21.5% 0.010 173.2)",
+        "tonalRamp": [
+          "#0a0c0b",
+          "#222625",
+          "#3e4441",
+          "#5c6361",
+          "#7d8482",
+          "#a0a7a4",
+          "#c5cbc9",
+          "#ecefee"
+        ]
+      },
+      "chalk-2": {
+        "role": "neutral",
+        "displayName": "Worn Chalk",
+        "canonical": "oklch(82.4% 0.014 120.3)",
+        "tonalRamp": [
+          "#0b0c09",
+          "#242621",
+          "#41433c",
+          "#60625a",
+          "#81847b",
+          "#a4a69e",
+          "#c8cac3",
+          "#eeefeb"
+        ]
+      },
+      "chalk-3": {
+        "role": "neutral",
+        "displayName": "Faded Chalk",
+        "canonical": "oklch(70.1% 0.015 138.7)",
+        "tonalRamp": [
+          "#0a0c09",
+          "#232621",
+          "#3e443d",
+          "#5d635b",
+          "#7e857c",
+          "#a1a79f",
+          "#c6cbc4",
+          "#ecefeb"
+        ]
+      },
+      "chalk-rule": {
+        "role": "neutral",
+        "displayName": "Seam",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262520",
+          "#44423c",
+          "#63615a",
+          "#84827a",
+          "#a7a59e",
+          "#cbc9c3",
+          "#efeeeb"
+        ],
+        "note": "Alpha of chalk white over slate; the ramp is chalk's."
+      },
+      "guide": {
+        "role": "neutral",
+        "displayName": "Guide Ruling",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262520",
+          "#44423c",
+          "#63615a",
+          "#84827a",
+          "#a7a59e",
+          "#cbc9c3",
+          "#efeeeb"
+        ],
+        "note": "Alpha of chalk white over slate; the ramp is chalk's."
+      },
+      "ghost": {
+        "role": "neutral",
+        "displayName": "Ghost Chalk",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262520",
+          "#44423c",
+          "#63615a",
+          "#84827a",
+          "#a7a59e",
+          "#cbc9c3",
+          "#efeeeb"
+        ],
+        "note": "Alpha of chalk white over slate; the ramp is chalk's."
+      },
+      "smear-ink": {
+        "role": "tertiary",
+        "displayName": "Smear Ink",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "humana-green": {
+        "role": "tertiary",
+        "displayName": "Humana Green",
+        "canonical": "oklch(65.8% 0.189 134.5)",
+        "tonalRamp": [
+          "#001100",
+          "#003000",
+          "#0a5200",
+          "#297500",
+          "#4c9900",
+          "#75bb44",
+          "#a4dc83",
+          "#d9fbc7"
+        ]
+      },
+      "ibm-blue": {
+        "role": "tertiary",
+        "displayName": "IBM Blue",
+        "canonical": "oklch(55.7% 0.243 262.0)",
+        "tonalRamp": [
+          "#000234",
+          "#000d75",
+          "#0029b2",
+          "#004ce6",
+          "#2574ff",
+          "#549dff",
+          "#8bc7ff",
+          "#caefff"
+        ]
+      },
+      "wellsfargo-red": {
+        "role": "tertiary",
+        "displayName": "Wells Fargo Red",
+        "canonical": "oklch(56.4% 0.215 25.8)",
+        "tonalRamp": [
+          "#260000",
+          "#590000",
+          "#8d0000",
+          "#bc000f",
+          "#e63537",
+          "#ff6b63",
+          "#ffa096",
+          "#ffd8d0"
+        ]
+      },
+      "wellsfargo-gold": {
+        "role": "tertiary",
+        "displayName": "Wells Fargo Gold",
+        "canonical": "oklch(86.9% 0.158 88.2)",
+        "tonalRamp": [
+          "#160800",
+          "#3b1e00",
+          "#603900",
+          "#865800",
+          "#a97a00",
+          "#ca9f1c",
+          "#e7c571",
+          "#ffedbe"
+        ]
+      },
+      "musigma-orange": {
+        "role": "tertiary",
+        "displayName": "Mu Sigma Orange",
+        "canonical": "oklch(60.2% 0.161 41.1)",
+        "tonalRamp": [
+          "#1f0000",
+          "#4d0200",
+          "#7b1700",
+          "#a73600",
+          "#ce5a2b",
+          "#ef835a",
+          "#ffb090",
+          "#ffe1cd"
+        ]
+      },
+      "cmu-red": {
+        "role": "tertiary",
+        "displayName": "Carnegie Red",
+        "canonical": "oklch(52.4% 0.203 21.6)",
+        "tonalRamp": [
+          "#240000",
+          "#570000",
+          "#89000d",
+          "#b80028",
+          "#e13c49",
+          "#ff6e71",
+          "#ffa2a0",
+          "#ffd9d6"
+        ]
+      },
+      "kiit-green": {
+        "role": "tertiary",
+        "displayName": "KIIT Green",
+        "canonical": "oklch(56.8% 0.152 148.0)",
+        "tonalRamp": [
+          "#001100",
+          "#003100",
+          "#00540c",
+          "#007728",
+          "#319a4a",
+          "#63bc73",
+          "#99dda2",
+          "#d3fbd8"
+        ]
+      },
+      "verizon-red": {
+        "role": "tertiary",
+        "displayName": "Verizon Red",
+        "canonical": "oklch(59.6% 0.245 29.2)",
+        "tonalRamp": [
+          "#280000",
+          "#5f0000",
+          "#950000",
+          "#c70000",
+          "#f1160e",
+          "#ff5f4c",
+          "#ff9a86",
+          "#ffd6c8"
+        ]
+      },
+      "aiesec-blue": {
+        "role": "tertiary",
+        "displayName": "AIESEC Blue",
+        "canonical": "oklch(60.3% 0.198 255.1)",
+        "tonalRamp": [
+          "#00072c",
+          "#001d65",
+          "#003a9c",
+          "#005bcc",
+          "#0d80f3",
+          "#4fa6ff",
+          "#8accff",
+          "#cbf2ff"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name in the hero only, under the heavy chalk filter."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "One write-on heading per panel, with an optional italic subtitle at 0.42em below."
+      },
+      "math": {
+        "displayName": "Math",
+        "purpose": "Typeset expressions such as the hero objective."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Institution, school, course and reference titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "CMU Concrete reading text; prose capped at 68ch."
+      },
+      "annotation": {
+        "displayName": "Annotation",
+        "purpose": "Italic notes under braces, venues, subtitles and run-in leads."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "CMU Typewriter for codes, dates, keys and numbers only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "ledge",
+        "value": "0 -12px 28px rgb(0 0 0 / 0.35)",
+        "purpose": "The chalk tray casting upward onto the board."
+      },
+      {
+        "name": "hint",
+        "value": "0 6px 18px rgb(0 0 0 / 0.4)",
+        "purpose": "The transient draw hint above the tray."
+      },
+      {
+        "name": "smear-legibility",
+        "value": "text-shadow: 0 1px 1px rgb(0 0 0 / 0.35)",
+        "purpose": "White text over a coloured institution smear only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The single easing for every transition and reveal (--ease-out)."
+      },
+      {
+        "name": "write-on",
+        "value": "clip-path 1.1s ease-out",
+        "purpose": "Headings reveal left to right once on entry."
+      },
+      {
+        "name": "stroke-draw",
+        "value": "stroke-dashoffset 1s ease-out 0.35s",
+        "purpose": "Chalk marks (boxes, underbraces) draw once on entry."
+      },
+      {
+        "name": "current-box",
+        "value": "stroke-dashoffset 0.6s ease-out",
+        "purpose": "Current tray section gets boxed."
+      },
+      {
+        "name": "hover-underline",
+        "value": "transform 0.45s ease-out",
+        "purpose": "Tray section underline draws from the left."
+      },
+      {
+        "name": "wipe",
+        "value": "opacity 0 + blur(6px), 0.7s ease-out",
+        "purpose": "Eraser clears visitor strokes."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "objective-break",
+        "value": "640px"
+      },
+      {
+        "name": "tray-compact",
+        "value": "720px"
+      },
+      {
+        "name": "single-column",
+        "value": "860px"
+      },
+      {
+        "name": "stacked-rows",
+        "value": "480px"
+      }
+    ],
+    "filters": [
+      {
+        "name": "chalk",
+        "purpose": "Heavy displacement and grain for the display name and drawn tray objects."
+      },
+      {
+        "name": "chalk-soft",
+        "purpose": "Lighter chalk for headings, the objective, display links and tray words."
+      },
+      {
+        "name": "chalk-line",
+        "purpose": "Displacement for stroked marks: boxes, braces, visitor chalk."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Institution Smear",
+      "kind": "chip",
+      "refersTo": "org-smear",
+      "description": "Coloured chalk rubbed behind an institution name; the only colour on the board.",
+      "html": "<p class=\"ds-line\">Senior Data Scientist at <a class=\"ds-org\" href=\"#\" style=\"--hue:#5BA908\">Humana</a> and <span class=\"ds-org ds-org-2\" style=\"--hue:#D71E28;--hue2:#FFCD41\">Wells Fargo</span>.</p>",
+      "css": ".ds-line { background: var(--slate); color: var(--chalk-2); font-family: var(--f-body); font-size: 1.3rem; line-height: 1.6; padding: 1.5rem; margin: 0; } .ds-org { position: relative; display: inline-block; padding: 0 0.32em; margin: 0 0.04em; color: #fff; white-space: nowrap; isolation: isolate; text-decoration: none; text-shadow: 0 1px 1px rgb(0 0 0 / 0.35); } .ds-org::before { content: \"\"; position: absolute; z-index: -1; inset: 0.08em -0.06em 0.02em; background: var(--hue); opacity: 0.62; transform: skewX(-6deg) rotate(-0.8deg); border-radius: 0.12em 0.4em 0.18em 0.5em; transition: opacity 0.4s var(--ease-out), transform 0.5s var(--ease-out); } .ds-org-2::after { content: \"\"; position: absolute; left: 0.1em; right: 0.1em; bottom: -0.12em; height: 0.13em; background: var(--hue2); opacity: 0.9; transform: rotate(-0.8deg); border-radius: 1em; } .ds-org:hover::before { opacity: 0.85; transform: skewX(-6deg) rotate(-0.8deg) scale(1.04); } .ds-org:focus-visible { outline: 2px dashed var(--chalk); outline-offset: 4px; border-radius: 2px; }"
+    },
+    {
+      "name": "Chalk Tray Navigation",
+      "kind": "nav",
+      "refersTo": "tray-section",
+      "description": "Section words on the slate ledge; hover draws an underline, current is boxed in chalk.",
+      "html": "<nav class=\"ds-tray\"><a class=\"ds-stick\" href=\"#\">Abstract</a><a class=\"ds-stick\" href=\"#\" aria-current=\"true\">Work<svg class=\"ds-sbox\" viewBox=\"0 0 100 40\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path pathLength=\"100\" vector-effect=\"non-scaling-stroke\" d=\"M2 7 C30 3 70 4 98.5 6 C99 17 98.8 28 98 35 C70 37.5 30 38.5 2.5 36.5 C1.2 26 1.5 15 2.2 5\"/></svg></a><a class=\"ds-stick\" href=\"#\">References</a><a class=\"ds-stick\" href=\"#\">Office hours</a></nav>",
+      "css": ".ds-tray { display: flex; align-items: center; gap: 0.25rem; height: var(--tray-h); padding: 0 1rem; background: var(--slate-lo); border-top: 1px solid rgb(236 234 225 / 0.16); box-shadow: 0 -12px 28px rgb(0 0 0 / 0.35); } .ds-stick { position: relative; font-family: var(--f-display); font-size: 1.05rem; line-height: 1; color: var(--chalk-2); text-decoration: none; padding: 0.6rem 0.7rem; transition: color 0.3s var(--ease-out); } .ds-stick::after { content: \"\"; position: absolute; left: 0.7rem; right: 0.7rem; bottom: 0.32rem; height: 2px; background: var(--chalk); border-radius: 2px; opacity: 0.85; transform: scaleX(0); transform-origin: left; transition: transform 0.45s var(--ease-out); } .ds-stick:hover { color: var(--chalk); } .ds-stick:hover::after { transform: scaleX(1); } .ds-stick[aria-current=\"true\"] { color: var(--chalk); } .ds-stick[aria-current=\"true\"]::after { transform: scaleX(0); } .ds-stick:focus-visible { outline: 2px dashed var(--chalk); outline-offset: 4px; border-radius: 2px; } .ds-sbox { position: absolute; inset: 0.1rem 0.15rem; width: calc(100% - 0.3rem); height: calc(100% - 0.2rem); overflow: visible; pointer-events: none; } .ds-sbox path { fill: none; stroke: var(--chalk); stroke-width: 1.5; stroke-linecap: round; }"
+    },
+    {
+      "name": "Tray Tool",
+      "kind": "button",
+      "refersTo": "tray-tool",
+      "description": "A physical chalk piece with an italic label; pressed lifts and tilts the chalk.",
+      "html": "<div class=\"ds-tools\"><button class=\"ds-tool\" type=\"button\" aria-pressed=\"false\"><svg class=\"ds-piece\" viewBox=\"0 0 44 14\" aria-hidden=\"true\"><rect x=\"1\" y=\"2\" width=\"40\" height=\"10\" rx=\"4.5\" fill=\"#efede4\"/><ellipse cx=\"40\" cy=\"7\" rx=\"2.6\" ry=\"4.6\" fill=\"#d9d6ca\"/></svg>Chalk</button><button class=\"ds-tool\" type=\"button\" aria-pressed=\"true\"><svg class=\"ds-piece\" viewBox=\"0 0 44 14\" aria-hidden=\"true\"><rect x=\"1\" y=\"2\" width=\"40\" height=\"10\" rx=\"4.5\" fill=\"#efede4\"/><ellipse cx=\"40\" cy=\"7\" rx=\"2.6\" ry=\"4.6\" fill=\"#d9d6ca\"/></svg>Chalk</button><button class=\"ds-tool\" type=\"button\" disabled><svg class=\"ds-piece\" viewBox=\"0 0 44 18\" aria-hidden=\"true\"><rect x=\"1\" y=\"1\" width=\"42\" height=\"9\" rx=\"2\" fill=\"#8a6a48\"/><rect x=\"1\" y=\"9\" width=\"42\" height=\"8\" rx=\"1.5\" fill=\"#cfcabd\"/></svg>Erase</button></div>",
+      "css": ".ds-tools { display: flex; gap: 0.25rem; padding: 1rem; background: var(--slate-lo); } .ds-tool { appearance: none; border: 0; background: none; cursor: pointer; font-family: var(--f-display); font-style: italic; font-size: 1rem; color: var(--chalk-2); display: inline-flex; align-items: center; gap: 0.55rem; height: 2.75rem; padding: 0 0.6rem; border-radius: 0.4rem; transition: color 0.3s var(--ease-out); } .ds-tool:hover { color: var(--chalk); } .ds-tool:focus-visible { outline: 2px dashed var(--chalk); outline-offset: 4px; } .ds-piece { width: 2.6rem; height: auto; transform: translateY(3px); transition: transform 0.4s var(--ease-out); } .ds-tool:hover .ds-piece { transform: translateY(1px); } .ds-tool[aria-pressed=\"true\"] { color: var(--chalk); } .ds-tool[aria-pressed=\"true\"] .ds-piece { transform: translateY(-5px) rotate(-14deg); } .ds-tool:disabled { opacity: 0.4; cursor: not-allowed; } .ds-tool:disabled .ds-piece { transform: translateY(3px); }"
+    },
+    {
+      "name": "Chalk Link",
+      "kind": "custom",
+      "refersTo": "link",
+      "description": "Inherited-colour link with a quiet chalk underline that brightens on hover; dashed chalk focus.",
+      "html": "<p class=\"ds-links\"><a href=\"#\">LinkedIn</a> <a href=\"#\">GitHub</a> <a class=\"ds-mail\" href=\"#\">name@example.com</a></p>",
+      "css": ".ds-links { background: var(--slate); color: var(--chalk); font-family: var(--f-display); font-size: 1.15rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; align-items: baseline; padding: 1.5rem; margin: 0; } .ds-links a { color: inherit; text-decoration-line: underline; text-decoration-thickness: 1px; text-underline-offset: 0.22em; text-decoration-color: rgb(236 234 225 / 0.4); transition: text-decoration-color 0.3s var(--ease-out); } .ds-links a:hover { text-decoration-color: var(--chalk); } .ds-links a:focus-visible { outline: 2px dashed var(--chalk); outline-offset: 4px; border-radius: 2px; } .ds-links .ds-mail { font-size: 2.2rem; letter-spacing: -0.02em; text-decoration-thickness: 2px; text-underline-offset: 0.16em; }"
+    },
+    {
+      "name": "Panel Heading",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "One display-serif heading per panel with an italic subtitle below it, never a label above.",
+      "html": "<div class=\"ds-panel\"><h2 class=\"ds-h2\">References<span class=\"ds-sub\">Papers re-implemented, models built from scratch. Recipe → result.</span></h2></div>",
+      "css": ".ds-panel { background: var(--slate); color: var(--chalk); padding: 2rem 1.5rem; border-top: 1px solid rgb(236 234 225 / 0.16); } .ds-h2 { font-family: var(--f-display); font-weight: 400; font-size: clamp(2.25rem, 4.6vw, 3.75rem); line-height: 1.05; letter-spacing: -0.015em; margin: 0; text-wrap: balance; } .ds-sub { display: block; font-style: italic; font-size: 0.42em; letter-spacing: 0; color: var(--chalk-2); margin-top: 0.6em; }"
+    },
+    {
+      "name": "Lemma and Boxed Result",
+      "kind": "custom",
+      "refersTo": "body",
+      "description": "Run-in lemma paragraphs closing with ∴ and a result in a hand-drawn chalk box.",
+      "html": "<div class=\"ds-lemmas\"><p class=\"ds-lemma\"><b>Lemma 1.1</b> <i>(Agentic retrieval).</i> Multi-step tool-using LLM pipelines with evaluation gates before production.</p><p class=\"ds-result\"><span class=\"ds-tf\">∴</span><span class=\"ds-boxed\">a measured result goes here<svg viewBox=\"0 0 100 40\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path pathLength=\"100\" vector-effect=\"non-scaling-stroke\" d=\"M1 6 C30 2 70 3 99 5 C99.5 16 99.2 28 98.6 36 C70 38 30 39 1.4 37 C0.5 26 0.8 14 1.2 4\"/></svg></span></p></div>",
+      "css": ".ds-lemmas { background: var(--slate); color: var(--chalk); font-family: var(--f-body); font-size: 1.125rem; line-height: 1.6; padding: 1.5rem; max-width: 70ch; } .ds-lemma { margin: 0 0 1.1rem; } .ds-lemma b { font-family: var(--f-display); font-weight: 700; letter-spacing: 0.01em; } .ds-lemma i { font-family: var(--f-display); } .ds-result { margin: 1.6rem 0 0; display: flex; align-items: center; gap: 0.75rem; font-family: var(--f-display); font-size: 1.12rem; } .ds-tf { font-size: 1.4rem; line-height: 1; color: var(--chalk-2); } .ds-boxed { position: relative; padding: 0.4rem 1.1rem 0.45rem; } .ds-boxed svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; } .ds-boxed path { fill: none; stroke: var(--chalk); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; }"
+    },
+    {
+      "name": "Reference Entry",
+      "kind": "card",
+      "refersTo": "title",
+      "description": "Bibliography item: typewriter key, serif title, italic venue, recipe → result line.",
+      "html": "<ol class=\"ds-bib\"><li class=\"ds-entry\"><span class=\"ds-key\">[HMZ16]</span><div><p class=\"ds-t\"><a href=\"#\">Deep Compression</a><span class=\"ds-venue\">blog post, re-implementation</span></p><p class=\"ds-recipe\">prune, quantize, Huffman-code <span class=\"ds-arrow\">→</span> <span class=\"ds-res\">a smaller model</span></p></div></li></ol>",
+      "css": ".ds-bib { list-style: none; margin: 0; padding: 1.5rem; background: var(--slate); color: var(--chalk); font-family: var(--f-body); } .ds-entry { display: grid; grid-template-columns: 5.2rem minmax(0, 1fr); gap: 1rem; padding: 1.4rem 0; border-top: 1px solid rgb(236 234 225 / 0.16); } .ds-key { font-family: var(--f-mono); font-variant-numeric: tabular-nums; color: var(--chalk-3); font-size: 0.88rem; padding-top: 0.3rem; } .ds-entry p { margin: 0; } .ds-t { font-family: var(--f-display); font-size: 1.5rem; line-height: 1.2; margin-bottom: 0.45rem !important; } .ds-t a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.22em; text-decoration-color: rgb(236 234 225 / 0.4); } .ds-t a:hover { text-decoration-color: var(--chalk); } .ds-t a:focus-visible { outline: 2px dashed var(--chalk); outline-offset: 4px; } .ds-venue { display: block; font-style: italic; font-size: 0.62em; color: var(--chalk-2); margin-top: 0.3rem; } .ds-recipe { font-size: 1.02rem; line-height: 1.55; color: var(--chalk-2); } .ds-arrow { color: var(--chalk); } .ds-res { color: var(--chalk); font-family: var(--f-display); font-style: italic; }"
+    },
+    {
+      "name": "Notation Table",
+      "kind": "custom",
+      "refersTo": "annotation",
+      "description": "Definition list with italic serif terms and dashed seams between rows.",
+      "html": "<aside class=\"ds-notation\"><h3>Notation</h3><dl><div class=\"ds-row\"><dt>Models</dt><dd>LLMs, transformers, gradient boosting</dd></div><div class=\"ds-row\"><dt>Systems</dt><dd>agents, retrieval, evaluation</dd></div></dl></aside>",
+      "css": ".ds-notation { background: var(--slate); color: var(--chalk); font-family: var(--f-body); padding: 1.25rem 1.5rem; border-top: 1px solid rgb(236 234 225 / 0.25); } .ds-notation h3 { font-family: var(--f-display); font-style: italic; font-weight: 400; font-size: 1.35rem; margin: 0 0 1rem; } .ds-notation dl { margin: 0; } .ds-row { display: grid; grid-template-columns: 9.5rem 1fr; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px dashed rgb(236 234 225 / 0.14); } .ds-row dt { font-family: var(--f-display); font-style: italic; color: var(--chalk); } .ds-row dd { margin: 0; font-size: 0.98rem; line-height: 1.5; color: var(--chalk-2); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Seminar Blackboard",
+    "overview": "The whole site is one deep slate board after a good CMU seminar: a derivation of a person, set in Computer Modern and rendered as chalk. Ink is a single warm chalk white in three strengths; the board carries grain, a faint ruled texture, and half-erased equations left from the previous lecture. Content reads like a paper written on a board: an abstract, a notation table, lemmas with boxed results, numbered references, and office hours.\n\nDensity is low and the board is mostly unprinted. Each section is a full-width panel separated by a hairline seam, with one display-serif heading that writes itself on from left to right. Ornament is never decorative: every mark is a piece of mathematical notation (an underbrace, a box around a result, a therefore sign, an arrow) drawn as a chalk stroke.\n\nColour exists only as code. Institution names sit on a rubbed smear of coloured chalk in their brand hue; nothing else on the board is coloured. The visitor can pick up chalk from the tray and draw on the board, then erase it. The world refuses the dark-mode developer portfolio: no hero-plus-skill-pills-plus-card-grid.",
+    "keyCharacteristics": [
+      "One slate board, one chalk ink in three strengths, colour reserved for institution smears.",
+      "Computer Modern throughout: Serif for display and math, Concrete for reading, Typewriter for codes, dates and numbers.",
+      "Notation as ornament: underbraces, boxes, ∴ and → are drawn or typeset, never iconography.",
+      "Chalk texture comes from three SVG displacement filters, not from images.",
+      "Motion is a write-on: clip reveals for headings, stroke-draws for marks, once, and fully visible without JS or under reduced motion."
+    ],
+    "rules": [
+      {
+        "name": "The Colour Is Code Rule",
+        "body": "Colour appears only as an institution's smear behind its own name. No coloured headings, buttons, links, borders or highlights. The chalk and eraser drawings in the tray depict their real objects and are the only exception.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Ink Rule",
+        "body": "All text and marks are chalk white at one of three strengths (chalk, chalk-2, chalk-3). Hierarchy comes from strength, size and italic, never from a second hue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Typeset Not Styled Rule",
+        "body": "Every face is Computer Modern. Emphasis is italic or bold Serif as in a paper (Lemma heads in bold, lemma names in italic); never uppercase tracking, never a sans.",
+        "section": "typography"
+      },
+      {
+        "name": "The Typewriter Means Data Rule",
+        "body": "CMU Typewriter is used only for codes, dates, keys and numbers. It never sets prose or navigation.",
+        "section": "typography"
+      },
+      {
+        "name": "The Board Is Flat Rule",
+        "body": "Nothing written on the board casts a shadow. Only the tray and the hint, which are objects in front of it, are lifted.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** set every institution name in an institution smear with its brand hue from `orgs`, and add new institutions there rather than in CSS.",
+      "**Do** draw ornament as notation: a chalk box for a result, an underbrace for an annotation, ∴ before a conclusion, → between recipe and result.",
+      "**Do** run chalk texture through the shared #chalk, #chalk-soft and #chalk-line filters: heavy for the name, soft for headings and links, line for strokes.",
+      "**Do** separate content with 1px seams at 16% chalk and leave the board open; panels breathe at clamp(4.5rem, 9vw, 8rem).",
+      "**Do** keep reveals one-shot, ease-out expo, visible without JS, and removed under reduced motion.",
+      "**Do** reach for chalk-2 and italic before reaching for a smaller size."
+    ],
+    "donts": [
+      "**Don't** colour anything except institution smears: no accent buttons, coloured links, coloured headings or tinted panels.",
+      "**Don't** use any face outside Computer Modern; route new symbols through the CM Symbols subset instead of letting a system font fill the glyph.",
+      "**Don't** build the dark-mode developer portfolio: no skill pills, no card grid, no boxed cards with fills or borders on all four sides.",
+      "**Don't** cast shadows from anything written on the board.",
+      "**Don't** use CMU Typewriter for prose, headings or navigation.",
+      "**Don't** put a label above a heading; context goes into an italic subtitle below it."
+    ]
+  }
+}

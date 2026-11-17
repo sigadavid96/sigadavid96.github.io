@@ -1,356 +1,156 @@
 ---
 import { siteConfig } from "../config";
+import Org from "./Org.astro";
+import Brace from "./Brace.astro";
 ---
 
-<div
-  id="hero"
-  class="relative isolate overflow-hidden bg-white py-24 md:h-screen"
-  style={`--accent-color: ${siteConfig.accentColor}`}
->
-  <!-- Gradient overlay -->
-  <div
-    class="absolute inset-0 -z-10"
-    style={`background: radial-gradient(ellipse 800px 1200px at 0% 0%, ${siteConfig.accentColor}40 0%, ${siteConfig.accentColor}25 20%, ${siteConfig.accentColor}10 40%, rgba(255, 255, 255, 0.3) 70%, rgba(255, 255, 255, 0.8) 90%, white 100%)`}
-  >
+<header id="top" class="hero panel" data-section="top">
+  <div class="ghost" aria-hidden="true" style="top:9%; right:-4%; font-size:clamp(2rem,4vw,3.6rem); transform:rotate(-2deg)">
+    softmax(<span>QK</span><sup>⊤</sup>/√<span>d</span><sub>k</sub>)<span>V</span>
   </div>
-  <svg
-    aria-hidden="true"
-    class="absolute inset-0 -z-10 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-  >
-    <defs>
-      <pattern
-        x="50%"
-        y={-1}
-        id="0787a7c5-978c-4f66-83c7-11c213f99cb7"
-        width={200}
-        height={200}
-        patternUnits="userSpaceOnUse"
-      >
-        <path d="M.5 200V.5H200" fill="none"></path>
-      </pattern>
-      <pattern
-        id="programming-symbols"
-        x="0"
-        y="0"
-        width="400"
-        height="400"
-        patternUnits="userSpaceOnUse"
-      >
-        <text
-          x="50"
-          y="50"
-          fill={siteConfig.accentColor}
-          font-family="monospace"
-          font-size="24"
-          transform="rotate(-15)">&lt;/&gt;</text
-        >
-        <text
-          x="150"
-          y="100"
-          fill={siteConfig.accentColor}
-          font-family="monospace"
-          font-size="20"
-          transform="rotate(10)">{}</text
-        >
-        <text
-          x="250"
-          y="80"
-          fill={siteConfig.accentColor}
-          font-family="monospace"
-          font-size="18"
-          transform="rotate(-5)">=&gt;</text
-        >
-        <text
-          x="100"
-          y="200"
-          fill={siteConfig.accentColor}
-          font-family="monospace"
-          font-size="22"
-          transform="rotate(15)">[]</text
-        >
-        <text
-          x="300"
-          y="180"
-          fill={siteConfig.accentColor}
-          font-family="monospace"
-          font-size="20"
-          transform="rotate(-10)">&lt;&gt;</text
-        >
-        <text
-          x="200"
-          y="250"
-          fill={siteConfig.accentColor}
-          font-family="monospace"
-          font-size="24"
-          transform="rotate(5)">()</text
-        >
-        <text
-          x="50"
-          y="320"
-          fill={siteConfig.accentColor}
-          font-family="monospace"
-          font-size="18"
-          transform="rotate(-8)">::</text
-        >
-        <text
-          x="350"
-          y="300"
-          fill={siteConfig.accentColor}
-          font-family="monospace"
-          font-size="22"
-          transform="rotate(12)">==</text
-        >
-        <text
-          x="150"
-          y="350"
-          fill={siteConfig.accentColor}
-          font-family="monospace"
-          font-size="20"
-          transform="rotate(-15)">++</text
-        >
-        <text
-          x="250"
-          y="370"
-          fill={siteConfig.accentColor}
-          font-family="monospace"
-          font-size="24"
-          transform="rotate(8)">;</text
-        >
-      </pattern>
-    </defs>
-    <rect
-      fill="url(#programming-symbols)"
-      width="100%"
-      height="100%"
-      opacity="0.2"></rect>
-    <rect
-      fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)"
-      width="100%"
-      height="100%"
-      stroke-width={0}></rect>
-  </svg>
-  <div class="h-full mx-auto p-8 sm:p-12 md:p-24 flex items-center">
-    <div>
-      <h2
-        class="text-pretty text-xl sm:text-2xl md:text-5xl font-bold tracking-tight text-gray-700 animate-fade-in"
-      >
-        Hello! 👋
-      </h2>
-      <h1
-        class="mt-6 sm:mt-8 md:mt-10 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-200"
-      >
-        I'm <span style={{ color: siteConfig.accentColor }}
-          >{siteConfig.name}</span
-        >
-      </h1>
-      <p
-        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-600 animate-fade-in animation-delay-400"
-      >
-        {siteConfig.title}
-      </p>
-      <div
-        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium animate-fade-in animation-delay-600"
-      >
-        <span class="text-gray-600">Specialized in: </span>
-        <span
-          id="typing-text"
-          style={{ color: siteConfig.accentColor }}
-          class="font-semibold"
-        ></span>
-        <span
-          id="cursor"
-          style={{ color: siteConfig.accentColor }}
-          class="animate-blink">|</span
-        >
-      </div>
+  <div class="ghost" aria-hidden="true" style="bottom:5%; right:-3%; font-size:clamp(1.6rem,3vw,2.6rem); transform:rotate(1.5deg)">
+    p(x<sub>t</sub> | x<sub>&lt;t</sub>) = ∏ softmax(W h<sub>t</sub>)
+  </div>
+  <div class="ghost" aria-hidden="true" style="top:44%; right:6%; font-size:clamp(1.3rem,2.2vw,2rem); transform:rotate(-1deg)">
+    ∇<sub>𝜃</sub> E<sub>q</sub>[log p − log q] + KL(q || p)
+  </div>
+
+  <div class="wrap hero-grid">
+    <h1 class="name chalk-ink write">{siteConfig.name}</h1>
+
+    <p class="role">
+      Senior Data Scientist at <Org k="humana" />, building agentic LLM systems.
+      Currently studying generative AI &amp; LLMs at
+      <Org k="cmu" label="CMU School of Computer Science" href={siteConfig.now.link} />.
+    </p>
+
+    <div class="objective chalk-soft" role="math" aria-label="theta star equals the argmin over theta of research loss plus lambda times production loss">
+      <span class="lhs">𝜃<sup>*</sup> =</span>
+      <span class="argmin">arg min<sub>𝜃</sub></span>
+      <span class="br" aria-hidden="true"></span>
+      <span class="term">
+        <span class="tex"><i>L</i><sub>research</sub>(𝜃)</span>
+        <Brace />
+        <span class="note">CMU SCS, GenAI &amp; LLMs, ’26–’27</span>
+      </span>
+      <span class="op">+</span>
+      <span class="br" aria-hidden="true"></span>
+      <span class="term lam">
+        <button class="tex lambda" type="button" aria-describedby="lam-note" title="Try a different λ">
+          𝜆
+        </button>
+        <Brace />
+        <span class="note" id="lam-note" aria-live="polite">λ = 1: both count equally</span>
+      </span>
+      <span class="op">·</span>
+      <span class="term">
+        <span class="tex"><i>L</i><sub>production</sub>(𝜃)</span>
+        <Brace />
+        <span class="note">agentic LLMs at Humana</span>
+      </span>
     </div>
+
+    <p class="st">
+      <span class="st-k">s.t.</span>
+      <span>years in ML ≥ 7,</span>
+      <span>patent filings = 3,</span>
+      <span>CMU courses in progress = 3</span>
+    </p>
+
+    <ul class="contact" aria-label="Contact">
+      <li><a href={`mailto:${siteConfig.social.email}`}>{siteConfig.social.email}</a></li>
+      <li><a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
   </div>
-  <div
-    class="absolute bottom-0 left-0 right-0 p-8 sm:p-12 md:p-24 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-gray-700 animate-fade-in animation-delay-600"
-  >
-    {
-      siteConfig.social?.email && (
-        <a
-          href={`mailto:${siteConfig.social.email}`}
-          aria-label="Email"
-          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
-            <path d="M3 7l9 6l9 -6" />
-          </svg>
-        </a>
-      )
-    }
-    {
-      siteConfig.social?.linkedin && (
-        <a
-          href={siteConfig.social.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
-          >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M8 11v5" />
-              <path d="M8 8v.01" />
-              <path d="M12 16v-5" />
-              <path d="M16 16v-3a2 2 0 1 0 -4 0" />
-              <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
-            </>
-          </svg>
-        </a>
-      )
-    }
-    {
-      siteConfig.social?.github && (
-        <a
-          href={siteConfig.social.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
-          >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-            </>
-          </svg>
-        </a>
-      )
-    }
-  </div>
-</div>
+</header>
 
 <style>
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .hero {
+    min-height: calc(100svh - var(--tray-h));
+    display: flex;
+    align-items: center;
+    padding-top: clamp(3rem, 7vh, 6rem);
+    padding-bottom: clamp(3rem, 7vh, 5rem);
+  }
+  .hero-grid { width: 100%; }
+  .name {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: clamp(3.25rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin: 0 0 1.75rem;
+  }
+  .role {
+    font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+    line-height: 1.55;
+    max-width: 40ch;
+    color: var(--chalk-2);
+    margin: 0 0 clamp(2.75rem, 6vh, 4.5rem);
+  }
+  .role :global(.org) { color: #fff; }
+
+  .objective {
+    font-family: var(--f-display);
+    font-size: clamp(1.55rem, 3.4vw, 3.1rem);
+    line-height: 1.1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    column-gap: 0.42em;
+    row-gap: 0.6em;
+  }
+  .objective sub, .objective sup { font-size: 0.55em; line-height: 0; }
+  .objective sub { vertical-align: -0.35em; }
+  .lhs, .argmin, .op { padding-top: 0.02em; }
+  .argmin { display: inline-flex; flex-direction: column; align-items: center; line-height: 1; }
+  .argmin sub { vertical-align: 0; line-height: 1.6; font-size: 0.55em; }
+  .term { display: inline-flex; flex-direction: column; align-items: stretch; flex: none; }
+  .lam { min-width: 3.2ch; }
+  .term .tex { white-space: nowrap; text-align: center; }
+  .term :global(.brace) { width: 100%; height: 0.36em; margin-top: 0.12em; }
+  .term :global(.brace path) { fill: none; stroke: var(--chalk-2); stroke-width: 1.6; stroke-linecap: round; filter: url(#chalk-line); }
+  .note {
+    font-style: italic;
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    line-height: 1.3;
+    color: var(--chalk-2);
+    text-align: center;
+    margin-top: 0.35rem;
+    max-width: 16ch;
+    align-self: center;
+  }
+  .lam { margin-inline: -0.45em; }
+  .lam .note { max-width: 13ch; min-height: 3.9em; }
+  .br { display: none; }
+  .lambda {
+    appearance: none; border: 0; background: none; color: inherit; font: inherit;
+    cursor: pointer; padding: 0 0.12em; border-radius: 0.2em;
+    transition: background 0.3s var(--ease-out);
+  }
+  .lambda:hover { background: rgb(236 234 225 / 0.08); }
+
+  .st {
+    margin: clamp(2rem, 4vh, 3rem) 0 0;
+    font-family: var(--f-display);
+    font-style: italic;
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+    color: var(--chalk-2);
+    display: flex; flex-wrap: wrap; column-gap: 1.1em; row-gap: 0.2em;
+  }
+  .st-k { font-style: normal; color: var(--chalk); }
+
+  .contact {
+    list-style: none; padding: 0; margin: clamp(2.5rem, 6vh, 4rem) 0 0;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem;
+    font-family: var(--f-display); font-size: 1.1rem;
   }
 
-  @keyframes blink {
-    0%,
-    49% {
-      opacity: 1;
-    }
-    50%,
-    100% {
-      opacity: 0;
-    }
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
-    opacity: 0;
-  }
-
-  .animation-delay-200 {
-    animation-delay: 0.2s;
-  }
-
-  .animation-delay-400 {
-    animation-delay: 0.4s;
-  }
-
-  .animation-delay-600 {
-    animation-delay: 0.6s;
-  }
-
-  .animate-blink {
-    animation: blink 1s infinite;
+  @media (max-width: 640px) {
+    .objective { column-gap: 0.32em; font-size: 1.75rem; }
+    .br { display: block; flex-basis: 100%; height: 0; }
+    .note { max-width: 20ch; }
+    .lam { margin-inline: 0; }
   }
 </style>
-
-<script>
-  const typingTexts = [
-    "GenAI",
-    "Machine Learning",
-    "Deep Learning",
-    "Software Engineering",
-    "Data Science",
-    "Data Analytics",
-    "Data Engineering",
-  ];
-
-  let textIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  let typingSpeed = 100;
-
-  function type() {
-    const typingElement = document.getElementById("typing-text");
-    if (!typingElement) return;
-
-    const currentText = typingTexts[textIndex];
-
-    if (isDeleting) {
-      typingElement.textContent = currentText.substring(0, charIndex - 1);
-      charIndex--;
-      typingSpeed = 50;
-    } else {
-      typingElement.textContent = currentText.substring(0, charIndex + 1);
-      charIndex++;
-      typingSpeed = 100;
-    }
-
-    if (!isDeleting && charIndex === currentText.length) {
-      // Pause at end of word
-      typingSpeed = 2000;
-      isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      textIndex = (textIndex + 1) % typingTexts.length;
-      typingSpeed = 500;
-    }
-
-    setTimeout(type, typingSpeed);
-  }
-
-  // Start typing animation after initial page load animation
-  setTimeout(() => {
-    type();
-  }, 1000);
-</script>

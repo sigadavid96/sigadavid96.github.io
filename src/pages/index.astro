@@ -1,11 +1,12 @@
 ---
-import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-import Projects from "../components/Projects.astro";
+import Abstract from "../components/Abstract.astro";
+import Now from "../components/Now.astro";
 import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
 import Education from "../components/Education.astro";
 import Footer from "../components/Footer.astro";
+import Tray from "../components/Tray.astro";
 import { siteConfig } from "../config";
 import "../styles/global.css";
 ---
@@ -13,27 +14,200 @@ import "../styles/global.css";
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={siteConfig.description} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <title>{siteConfig.name} - {siteConfig.title}</title>
+    <meta name="theme-color" content="#1b2220" />
+    <meta property="og:title" content={`${siteConfig.name} · ${siteConfig.title}`} />
+    <meta property="og:description" content={siteConfig.description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/cmunrm.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/cmunorm.woff2" as="font" type="font/woff2" crossorigin />
+    <title>{siteConfig.name} · {siteConfig.title}</title>
+    <script is:inline>document.documentElement.classList.add("js");</script>
   </head>
   <body>
-    <Header />
-    <section>
+    <a class="skip" href="#abstract">Skip to content</a>
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="chalk" x="-5%" y="-10%" width="110%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="n"></feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G" result="d"></feDisplacementMap>
+          <feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="1" seed="9" result="g"></feTurbulence>
+          <feColorMatrix in="g" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.4 1.25" result="ga"></feColorMatrix>
+          <feComposite in="d" in2="ga" operator="in"></feComposite>
+        </filter>
+        <filter id="chalk-soft" x="-5%" y="-10%" width="110%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"></feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="1.2" xChannelSelector="R" yChannelSelector="G" result="d"></feDisplacementMap>
+          <feTurbulence type="fractalNoise" baseFrequency="1.8" numOctaves="1" seed="4" result="g"></feTurbulence>
+          <feColorMatrix in="g" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.75 1.4" result="ga"></feColorMatrix>
+          <feComposite in="d" in2="ga" operator="in"></feComposite>
+        </filter>
+        <filter id="chalk-line" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="5" result="n"></feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="1.6" result="d"></feDisplacementMap>
+          <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="1" seed="2" result="g"></feTurbulence>
+          <feColorMatrix in="g" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.2 1.15" result="ga"></feColorMatrix>
+          <feComposite in="d" in2="ga" operator="in"></feComposite>
+        </filter>
+      </defs>
+    </svg>
+
+    <div class="board" id="board">
       <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Education />
-    </section>
-    <Footer />
+      <hr class="rail" />
+      <main>
+        <Abstract />
+        <hr class="rail" />
+        <Now />
+        <hr class="rail" />
+        <Experience />
+        <hr class="rail" />
+        <Projects />
+        <hr class="rail" />
+        <Education />
+      </main>
+      <hr class="rail" />
+      <Footer />
+      <svg id="scribble" aria-hidden="true"></svg>
+    </div>
+
+    <Tray />
+    <p class="draw-hint" id="draw-hint" role="status">Draw anywhere on the board. Press Esc to stop.</p>
+
+    <script>
+      const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // Write-on for headings and chalk marks, once each.
+      const writers = document.querySelectorAll<HTMLElement>(".write, .draw");
+      if ("IntersectionObserver" in window && !reduce) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add("is-in");
+                if (e.target.classList.contains("draw")) setTimeout(() => e.target.classList.add("done"), 1600);
+                io.unobserve(e.target);
+              }
+            }
+          },
+          { rootMargin: "0px 0px -8% 0px" }
+        );
+        writers.forEach((el) => io.observe(el));
+      } else {
+        writers.forEach((el) => el.classList.add("is-in"));
+      }
+
+      // λ: a dial between two loss terms.
+      const lamBtn = document.querySelector<HTMLButtonElement>(".lambda");
+      const lamNote = document.getElementById("lam-note");
+      const lams = [
+        "λ = 1: both count equally",
+        "λ → 0: only re-implementing papers",
+        "λ → ∞: only shipping to production",
+      ];
+      let li = 0;
+      lamBtn?.addEventListener("click", () => {
+        li = (li + 1) % lams.length;
+        if (lamNote) lamNote.textContent = lams[li];
+      });
+
+      // Tray: lift the stick for the section in view.
+      const sticks = new Map<string, HTMLElement>();
+      document.querySelectorAll<HTMLElement>(".stick").forEach((s) => sticks.set(s.dataset.target!, s));
+      const sections = document.querySelectorAll<HTMLElement>("[data-section]");
+      const spy = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (!e.isIntersecting) continue;
+            const id = (e.target as HTMLElement).dataset.section!;
+            sticks.forEach((el, k) => el.setAttribute("aria-current", String(k === id)));
+          }
+        },
+        { rootMargin: "-45% 0px -50% 0px" }
+      );
+      sections.forEach((s) => spy.observe(s));
+
+      // Visitor chalk.
+      const board = document.getElementById("board")!;
+      const svg = document.getElementById("scribble") as unknown as SVGSVGElement;
+      const chalkBtn = document.getElementById("chalk-tool") as HTMLButtonElement;
+      const eraseBtn = document.getElementById("eraser-tool") as HTMLButtonElement;
+      const hint = document.getElementById("draw-hint")!;
+      const NS = "http://www.w3.org/2000/svg";
+      let drawing = false;
+      let path: SVGPathElement | null = null;
+      let pts: [number, number][] = [];
+      let hintTimer = 0;
+
+      const sizeSvg = () => {
+        svg.setAttribute("viewBox", `0 0 ${board.clientWidth} ${board.scrollHeight}`);
+        svg.style.height = board.scrollHeight + "px";
+      };
+      sizeSvg();
+      addEventListener("resize", sizeSvg);
+
+      const setDrawing = (on: boolean) => {
+        drawing = on;
+        document.body.classList.toggle("drawing", on);
+        chalkBtn.setAttribute("aria-pressed", String(on));
+        clearTimeout(hintTimer);
+        hint.classList.toggle("show", on);
+        if (on) hintTimer = window.setTimeout(() => hint.classList.remove("show"), 3200);
+      };
+      chalkBtn.addEventListener("click", () => setDrawing(!drawing));
+      addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && drawing) setDrawing(false);
+      });
+
+      const toD = (p: [number, number][]) => {
+        if (p.length < 2) return `M${p[0][0]} ${p[0][1]} l0.1 0`;
+        let d = `M${p[0][0]} ${p[0][1]}`;
+        for (let i = 1; i < p.length - 1; i++) {
+          const mx = (p[i][0] + p[i + 1][0]) / 2;
+          const my = (p[i][1] + p[i + 1][1]) / 2;
+          d += ` Q${p[i][0]} ${p[i][1]} ${mx} ${my}`;
+        }
+        const l = p[p.length - 1];
+        return d + ` L${l[0]} ${l[1]}`;
+      };
+      const local = (e: PointerEvent): [number, number] => {
+        const r = svg.getBoundingClientRect();
+        return [Math.round(e.clientX - r.left), Math.round(e.clientY - r.top)];
+      };
+
+      svg.addEventListener("pointerdown", (e) => {
+        if (!drawing) return;
+        svg.setPointerCapture(e.pointerId);
+        pts = [local(e)];
+        path = document.createElementNS(NS, "path");
+        path.setAttribute("d", toD(pts));
+        svg.appendChild(path);
+        eraseBtn.disabled = false;
+      });
+      svg.addEventListener("pointermove", (e) => {
+        if (!drawing || !path) return;
+        const p = local(e);
+        const last = pts[pts.length - 1];
+        if (Math.hypot(p[0] - last[0], p[1] - last[1]) < 2.5) return;
+        pts.push(p);
+        path.setAttribute("d", toD(pts));
+      });
+      const end = () => {
+        path = null;
+        pts = [];
+      };
+      svg.addEventListener("pointerup", end);
+      svg.addEventListener("pointercancel", end);
+
+      eraseBtn.addEventListener("click", () => {
+        const strokes = svg.querySelectorAll("path");
+        strokes.forEach((s) => s.classList.add("wipe"));
+        window.setTimeout(() => strokes.forEach((s) => s.remove()), reduce ? 0 : 700);
+        eraseBtn.disabled = true;
+      });
+    </script>
   </body>
 </html>

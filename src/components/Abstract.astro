@@ -1,0 +1,73 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section id="abstract" class="panel" data-section="abstract" aria-labelledby="abstract-h">
+  <div class="wrap abs-grid">
+    <div>
+      <h2 id="abstract-h" class="h2 chalk-ink write">Abstract</h2>
+      <div class="prose abs-body">
+        {siteConfig.abstract.map((p) => <p>{p}</p>)}
+        <p class="domains"><em>Domains:</em> {siteConfig.business}</p>
+      </div>
+    </div>
+
+    <aside class="notation" aria-labelledby="notation-h">
+      <h3 id="notation-h" class="notation-h">Notation</h3>
+      <dl>
+        {
+          siteConfig.toolbox.map((t) => (
+            <div class="row">
+              <dt>{t.group}</dt>
+              <dd>{t.items}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<style>
+  .abs-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: start;
+  }
+  .abs-body { font-size: clamp(1.12rem, 1.4vw, 1.25rem); }
+  .abs-body p:first-child::first-letter {
+    font-family: var(--f-display);
+    float: left;
+    font-size: 3.4em;
+    line-height: 0.82;
+    padding: 0.06em 0.08em 0 0;
+  }
+  .domains { color: var(--chalk-2); }
+  .domains em { color: var(--chalk); }
+
+  .notation {
+    border-top: 1px solid rgb(236 234 225 / 0.25);
+    padding-top: 1.25rem;
+    margin-top: clamp(0rem, 7vw, 6.2rem);
+  }
+  .notation-h {
+    font-family: var(--f-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.35rem;
+    margin: 0 0 1rem;
+  }
+  dl { margin: 0; }
+  .row { display: grid; grid-template-columns: 9.5rem 1fr; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px dashed rgb(236 234 225 / 0.14); }
+  dt { font-family: var(--f-display); font-style: italic; color: var(--chalk); }
+  dd { margin: 0; font-size: 0.98rem; line-height: 1.5; color: var(--chalk-2); }
+
+  @media (max-width: 860px) {
+    .abs-grid { grid-template-columns: 1fr; }
+    .notation { margin-top: 0; }
+  }
+  @media (max-width: 480px) {
+    .row { grid-template-columns: 1fr; gap: 0.2rem; }
+  }
+</style>

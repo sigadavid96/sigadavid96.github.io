@@ -1,65 +1,70 @@
 ---
 import { siteConfig } from "../config";
-const hasEducation = siteConfig.education && siteConfig.education.length > 0;
+import Org from "./Org.astro";
 ---
 
-{
-  hasEducation && (
-    <section id="education" class="p-8 sm:p-12 md:p-16 lg:p-24">
-      <div>
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-          <div class="lg:col-span-4">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
-              Education
-            </h2>
-            <div
-              class="w-[75px] h-[5px] mt-2 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
-            />
-          </div>
+<section id="education" class="panel" data-section="education" aria-labelledby="edu-h">
+  <div class="wrap">
+    <h2 id="edu-h" class="h2 chalk-ink write">Education</h2>
 
-          <div class="lg:col-span-8">
-            <div class="space-y-8">
-              {siteConfig.education.map((edu) => (
-                <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-4 sm:p-5 md:p-6 hover:shadow-md transition-shadow duration-300">
-                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-                    <div class="flex-1">
-                      <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
-                        {edu.degree}
-                      </h3>
-                      <p
-                        class="text-base sm:text-lg font-medium"
-                        style={`color: ${siteConfig.accentColor}`}
-                      >
-                        {edu.school}
-                      </p>
-                      {edu.location && (
-                        <p class="text-sm text-gray-500 mt-1">
-                          {edu.location}
-                        </p>
-                      )}
-                    </div>
-                    <span class="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-0 sm:ml-4 flex-shrink-0">
-                      {edu.dateRange}
-                    </span>
-                  </div>
+    <div class="schools">
+      {
+        siteConfig.education.map((e) => (
+          <article class="school">
+            <h3 class="sname">
+              <Org k={e.org} />
+            </h3>
+            <p class="unit muted">{e.unit}</p>
+            <p class="degree">{e.degree}</p>
+            <p class="detail"><span class="mono">{e.dateRange}</span> · {e.detail}</p>
 
-                  <ul class="space-y-3">
-                    {edu.achievements.map((achievement) => (
-                      <li class="flex items-start">
-                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                        <span class="text-sm sm:text-base text-gray-600 leading-relaxed">
-                          {achievement}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
+            {e.coursework.length > 0 && (
+              <p class="cw">
+                <em>Coursework</em>{" "}
+                {e.coursework.map((c, i) => (
+                  <>
+                    <a href={c.link} target="_blank" rel="noopener noreferrer">{c.name}</a>{i < e.coursework.length - 1 ? ", " : "."}
+                  </>
+                ))}
+              </p>
+            )}
+            {e.roles.length > 0 && (
+              <ul class="roles">
+                {e.roles.map((r) => (
+                  <li>{r}</li>
+                ))}
+              </ul>
+            )}
+            <p class="consult">
+              <Org k={e.consult.org} /> {e.consult.text}.
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .schools {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(2.5rem, 6vw, 6rem);
+  }
+  .school { border-top: 1px solid rgb(236 234 225 / 0.16); padding-top: 1.75rem; }
+  .school p { margin: 0; }
+  .sname { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.15; margin: 0 0 0.4rem -0.3em; }
+  .unit { font-style: italic; }
+  .degree { font-family: var(--f-display); font-size: 1.2rem; margin-top: 0.9rem !important; }
+  .detail { color: var(--chalk-2); font-size: 0.92rem; margin-top: 0.25rem !important; }
+  .cw { margin-top: 1.4rem !important; line-height: 1.65; color: var(--chalk-2); }
+  .cw em { color: var(--chalk); }
+  .roles { margin: 1rem 0 0; padding-left: 1.1rem; color: var(--chalk-2); }
+  .roles li { margin: 0.3rem 0; }
+  .roles li::marker { content: "– "; }
+  .consult { margin-top: 1.4rem !important; color: var(--chalk-2); line-height: 1.7; }
+
+  @media (max-width: 860px) {
+    .schools { grid-template-columns: 1fr; }
+  }
+</style>

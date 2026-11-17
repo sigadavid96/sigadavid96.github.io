@@ -1,0 +1,52 @@
+---
+const sticks = [
+  { id: "abstract", label: "Abstract" },
+  { id: "now", label: "Now" },
+  { id: "work", label: "Work" },
+  { id: "references", label: "References" },
+  { id: "education", label: "Education" },
+  { id: "office-hours", label: "Office hours" },
+];
+---
+
+<nav class="tray" aria-label="Sections">
+  <div class="tray-inner">
+    <div class="sticks">
+      {
+        sticks.map((s) => (
+          <a class="stick" href={`#${s.id}`} data-target={s.id}>
+            <span class="sl">{s.label}</span>
+            <svg class="sbox" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
+              <path pathLength="100" vector-effect="non-scaling-stroke" d="M2 7 C30 3 70 4 98.5 6 C99 17 98.8 28 98 35 C70 37.5 30 38.5 2.5 36.5 C1.2 26 1.5 15 2.2 5" />
+            </svg>
+          </a>
+        ))
+      }
+    </div>
+    <div class="tools">
+      <button class="tool" id="chalk-tool" type="button" aria-pressed="false" title="Pick up the chalk and draw on the board">
+        <svg class="piece" viewBox="0 0 44 14" aria-hidden="true">
+          <rect x="1" y="2" width="40" height="10" rx="4.5" fill="#efede4" filter="url(#chalk)"></rect>
+          <ellipse cx="40" cy="7" rx="2.6" ry="4.6" fill="#d9d6ca"></ellipse>
+        </svg>
+        <span class="tool-l">Chalk</span>
+      </button>
+      <button class="tool" id="eraser-tool" type="button" title="Erase your drawings" disabled>
+        <svg class="piece eraser" viewBox="0 0 44 18" aria-hidden="true">
+          <rect x="1" y="1" width="42" height="9" rx="2" fill="#8a6a48"></rect>
+          <rect x="1" y="9" width="42" height="8" rx="1.5" fill="#cfcabd" filter="url(#chalk)"></rect>
+        </svg>
+        <span class="tool-l">Erase</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<style>
+  @media (max-width: 720px) {
+    .tool { flex-direction: column; gap: 0.15rem; height: auto; padding: 0.2rem 0.4rem; font-size: 0.78rem; }
+    .tool .piece { width: 2.1rem; }
+    .stick { font-size: 0.95rem; padding: 0.5rem 0.55rem; }
+    .tray-inner { gap: 0.5rem; }
+  }
+</style>

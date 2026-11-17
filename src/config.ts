@@ -1,223 +1,271 @@
+// Content for the portfolio. Employer work is described by AI technique and
+// business area only — no internal use cases, data types, or client names.
+
+export type OrgKey =
+  | "humana"
+  | "ibm"
+  | "wellsfargo"
+  | "musigma"
+  | "cmu"
+  | "kiit"
+  | "verizon"
+  | "aiesec";
+
+// Brand hues, used only as the colored-chalk smear behind each name.
+// `logo`: a chalk-white rendition of the company's own mark, set on its smear.
+// `withName`: the mark is a symbol, so the name is set beside it.
+type Logo = { src: string; w: number; h: number; em: number; withName?: boolean };
+export const orgs: Record<OrgKey, { name: string; hue: string; hue2?: string; logo?: Logo }> = {
+  humana: { name: "Humana", hue: "#5BA908", logo: { src: "/logos/humana.svg", w: 312, h: 66, em: 0.66 } },
+  ibm: { name: "IBM", hue: "#0F62FE", logo: { src: "/logos/ibm.svg", w: 1075, h: 401, em: 0.8 } },
+  wellsfargo: { name: "Wells Fargo", hue: "#D71E28", hue2: "#FFCD41", logo: { src: "/logos/wellsfargo.svg", w: 606, h: 342, em: 1.1 } },
+  musigma: { name: "Mu Sigma", hue: "#CD5827", logo: { src: "/logos/musigma-mark.png", w: 376, h: 236, em: 0.82, withName: true } },
+  cmu: { name: "Carnegie Mellon", hue: "#C41230" },
+  kiit: { name: "KIIT", hue: "#1E8E3E" },
+  verizon: { name: "Verizon", hue: "#EE0000" },
+  aiesec: { name: "AIESEC", hue: "#037EF3" },
+};
+
 export const siteConfig = {
   name: "Davidson Siga",
-  title: "Senior Data Scientist • AI/ML Engineer • MLOps Specialist",
-  description: "Portfolio of Davidson Siga - Senior Data Scientist at IBM specializing in Applied AI, MLOps, and Generative AI solutions for Fortune 100 companies",
-  accentColor: "#2563EB",
-  phone: "(412) 954-8493",
-  typingAnimation: [
-    "GenAI",
-    "Machine Learning",
-    "Deep Learning",
-    "Software Engineering",
-    "Data Science",
-    "Data Analytics",
-    "Data Engineering",
-  ],
+  title: "Senior Data Scientist · Applied AI & LLM Systems",
+  description:
+    "Davidson Siga, Senior Data Scientist at Humana. Builds agentic LLM systems in production. Carnegie Mellon MISM, now in the CMU School of Computer Science Graduate Certificate in Generative AI & LLMs.",
   social: {
     email: "sigadavid96@gmail.com",
-    linkedin: "https://linkedin.com/in/davidsonsiga",
+    linkedin: "https://www.linkedin.com/in/davidsonsiga",
     github: "https://github.com/sigadavid96",
   },
-  aboutMe:
-    "Senior Data Scientist at IBM with 7+ years building production-grade AI/ML systems for Fortune 100 companies. Carnegie Mellon University MS in Information Systems Management (GPA: 3.77, Distinction & Dean's List). Proven track record in GenAI, MLOps, and enterprise AI platform architecture.",
-  aboutMeSections: [
-    {
-      title: "AI Engineering & MLOps",
-      content:
-        "Technical lead for two global teams (7-member dev team + 5-member MLOps team) building enterprise ML platforms for Fortune 100 insurance company. Dev team architected 'AI Enablement Zone' with governed Snowflake provisioning system enabling 1,000+ data scientists to access datasets in <1 minute. MLOps team maintains and scales the production ML platform infrastructure.\n\nBuilt full-stack ML pipelines with AWS (Lambda, SQS), Terraform, ReactJS, and GitLab CI/CD. Deployed production forecasting pipelines (60+ LGBM models, 10min runtime, 6x faster than baseline).\n\nEstablished RBAC governance and comprehensive testing frameworks (Pytest, Locust).",
-    },
-    {
-      title: "Generative AI & LLM Applications",
-      content:
-        "Deployed GPT-3.5 Turbo for automated code generation achieving 30% productivity boost (97% C# accuracy, 70% Gherkin accuracy).\n\nBuilt LLM-powered compliance automation extracting regulatory insights from unstructured documents using RAG + LangChain. Created conversational AI chatbot with FAISS vector database for direct data interaction.\n\nAchieved 80% time reduction for insurance underwriters through RAG-based document analysis, automating extraction of plots, tables, and text into structured databases.",
-    },
-    {
-      title: "Machine Learning & Deep Learning",
-      content:
-        "Fine-tuned BERT and GPT2 models on IBM CP4D platform for financial complaint classification, improving regulatory response speed. Optimized search algorithms using TF-IDF and cosine similarity to retrieve millions of records in <100ms.\n\nDeployed ensemble models (RF, LGBM, BERT, LSTM) achieving F1 score improvement from 0.72 to ~0.9. Built LSTM forecasting and BERT classification models from scratch.\n\nStrong foundation in PyTorch, TensorFlow, XGBoost, and model optimization.",
-    },
-    {
-      title: "Data Analytics & Risk Modeling",
-      content:
-        "Credit Risk: Monitored ML/statistical risk models for $30MM+ unsecured credit card portfolios at Wells Fargo using PSI, VSI, KS metrics. Built logistic regression and tree-based models with advanced segmentation and hyperparameter tuning.\n\nPharmaceutical HEOR: Generated Real-World Evidence for Fortune 100 pharma through survival analysis, Cox PH models, and KM outcomes on 1MM+ longitudinal records.\n\nAutomated 100+ work hours into minutes through Python/SAS pipeline serving 150+ colleagues.",
-    },
+
+  abstract: [
+    "At Humana, I'm a Senior Data Scientist building LLM systems for production: agentic document pipelines, retrieval, evaluation and drift monitoring. I've worked in machine learning for over seven years, from survival analysis to LangGraph agents.",
+    "I like to understand models from the inside, so I re-implement papers and build models from scratch. Since August 2026 I've been studying LLMs, LLM systems and multimodal learning at Carnegie Mellon's School of Computer Science.",
   ],
-  closingStatement:
-    "Passionate about building scalable AI systems that deliver measurable business impact. Experienced in leading cross-functional teams, mentoring junior engineers on MLOps best practices, and translating complex technical solutions into stakeholder-ready insights.",
-  skills: [
-    "Python",
-    "SQL",
-    "PyTorch",
-    "TensorFlow",
-    "Scikit-learn",
-    "XGBoost",
-    "LightGBM",
-    "CatBoost",
-    "LangChain",
-    "RAG",
-    "LLMs",
-    "GPT",
-    "LLaMA",
-    "BERT",
-    "FastAPI",
-    "Flask",
-    "React",
-    "Docker",
-    "Terraform",
-    "AWS",
-    "GCP",
-    "Snowflake",
-    "IBM Cloud",
-    "MLOps",
-    "CI/CD",
-    "FAISS",
-    "Chroma",
-    "Vector Databases",
-    "PySpark",
-    "GoLang",
-    "Shell Scripting",
-    "Tableau",
-  ],
-  projects: [
-    {
-      name: "DART: DifferentiAble pRompT",
-      description:
-        "Re-implemented and improved SOTA prompt-based sentence classifier using 16-shot learning, achieving ~93% accuracy on GLUE datasets. Enhanced the original model through regularized loss functions, AdamP optimizer, and comprehensive hyperparameter tuning.",
-      link: "https://github.com/sigadavid96/DART",
-      skills: ["NLP", "Few-shot Learning", "Prompt Engineering", "PyTorch", "Research"],
-    },
-    {
-      name: "LSTM Time Series Forecasting",
-      description:
-        "Forecasted Apple's stock values based on Yahoo Finance 5+ years data API using LSTM architecture in PyTorch, achieving test MSE of ~6.8. Comprehensive tutorial explaining problem design, solution architecture, and implementation details for time series forecasting with deep learning.",
-      link: "https://github.com/sigadavid96/LSTM_TimeSeriesForecasting/blob/main/dsiga_LSTM_TimeSeriesForecasting_Tutorial.ipynb",
-      skills: ["PyTorch", "LSTM", "Time Series", "Deep Learning", "Statistics"],
-    },
-    {
-      name: "COVID-19 Impact on Small Businesses",
-      description:
-        "Built NLP data science pipeline using Twitter Research API to analyze millions of SMB tweets. Quantified small business support through sentiment analysis across geographic locations and time periods, providing actionable insights to stakeholders.",
-      link: "https://github.com/sigadavid96/TwitterSentimentResearch",
-      skills: ["NLP", "Data Science", "Sentiment Analysis", "Twitter API", "Python"],
-    },
-    {
-      name: "Google Trends COVID Analysis",
-      description:
-        "Quantified COVID-19 social reactions through comparative study of social media vs WHO data. Engineered data pipeline utilizing Google Trends API and COVID cases data to analyze public sentiment across time and countries for policy assistance.",
-      link: "https://github.com/sigadavid96/Time-To-React-Google-Covid",
-      skills: ["Data Science", "APIs", "Data Pipeline", "Statistics", "Python"],
-    },
-    {
-      name: "Deep Compression Blog (ICLR 2016)",
-      description:
-        "Technical blog post on ICLR 2016 best paper addressing mobility issues in deep learning through model compression. Covers pruning and quantization techniques for deployable models, contributing to ML reproducibility and education.",
-      link: "https://github.com/sigadavid96/DeepCompression/blob/master/_posts/Deep%20Learning%20-%20Deep%20Compression%20%28dsiga%29.md",
-      skills: ["Deep Learning", "Model Compression", "Research", "Technical Writing"],
-    },
-    {
-      name: "Movie Recommender Service (Academic Project)",
-      description:
-        "Deployed production movie recommendation system serving 1M users and 27K movies with 500ms inference time using collaborative filtering (SVD). Achieved 99.9% API availability with automated model retraining, containerized deployment, load balancing, and telemetry monitoring via Prometheus + Grafana. (Code unavailable - academic work)",
-      link: "",
-      skills: ["MLOps", "CI/CD", "Docker", "CircleCI", "Monitoring", "SVD"],
-    },
-    {
-      name: "BERT from Scratch (Academic Project)",
-      description:
-        "Developed complete BERT architecture from ground up for sentence classification. Pre-trained and fine-tuned on SST and CFIMDB datasets, achieving ~0.9 F1-score. Deep dive into transformer architecture, attention mechanisms, and transfer learning. (Code unavailable - academic work)",
-      link: "",
-      skills: ["Deep Learning", "NLP", "Transformers", "PyTorch", "BERT"],
-    },
-    {
-      name: "ML Algorithms from Scratch (Academic Project)",
-      description:
-        "Implemented core ML algorithms using only NumPy: Decision Trees with cross-entropy, NLP sentiment analyzer with logistic regression, single-layer neural network for handwritten letter classification, and Q-learning for mountain car problem. (Code unavailable - academic work)",
-      link: "",
-      skills: ["Machine Learning", "NumPy", "Algorithms", "Reinforcement Learning"],
-    },
-  ],
+  business: "Healthcare, banking, insurance, credit risk and pharma research.",
+
+  now: {
+    org: "cmu" as OrgKey,
+    school: "School of Computer Science",
+    program: "Graduate Certificate, Generative AI & Large Language Models",
+    dateRange: "Aug 2026 – Dec 2027",
+    link: "https://www.cmu.edu/online/generative-ai-llms",
+    note: "30% scholarship",
+    courses: [
+      { code: "11-967", name: "Large Language Models: Methods and Applications" },
+      { code: "11-968", name: "Large Language Model Systems" },
+      { code: "11-977", name: "Multimodal Machine Learning" },
+    ],
+  },
+
   experience: [
     {
-      company: "IBM",
+      org: "humana" as OrgKey,
       title: "Senior Data Scientist",
-      dateRange: "Feb 2023 - Present",
-      location: "New York, USA",
-      bullets: [
-        "ML Forecasting & Risk Monitoring: Designed and deployed scalable LGBM-based forecasting pipeline for mainframe resource utilization at Fortune 500 bank—reducing runtime from 1 hour to 10 minutes while supporting 60+ dynamic models across use cases",
-        "Technical Leadership: Serving as technical lead for two global teams (7-member dev team + 5-member MLOps team) building 'AI Enablement Zone', a self-service ML platform for enterprise insurance client. Dev team architected governed Snowflake provisioning system used by 1,000+ data scientists to access datasets in <1 minute. MLOps team maintains and scales production ML platform infrastructure",
-        "GenAI for Compliance Automation: Built LLM-powered systems to automate regulatory checklist generation from unstructured architectural documents using RAG and LangChain, creating AI agents that surface actionable compliance insights",
-        "Deep Learning for Complaint Classification: Led end-to-end development and fine-tuning of BERT and GPT2 models on IBM's CP4D platform to enhance financial complaint classification accuracy for top U.S. bank, improving regulatory response speed",
-        "AI-Powered Code Generation: Led initiative deploying GPT-3.5 Turbo for automated creation of Gherkin and Selenium C# code, boosting operational productivity by 30% for prominent banking client with 97%+ accuracy in C# and 70% accuracy in Gherkin code generation",
-        "Infrastructure & CI/CD: Implemented full-stack ML pipelines using AWS (Lambda, SQS), Terraform, ReactJS, and GitLab CI/CD. Established RBAC for data governance and built robust test frameworks (unit, integration, load testing with Pytest and Locust)",
-        "Process Automation in Insurance: Achieved 80% time reduction for insurance underwriters through RAG-based extraction of insights from customer financial documents, automating retrieval of plots, tables, and text into structured database for Langchain AI Agent querying",
-        "Enhanced Search Engine Performance: Transformed search algorithm performance using TF-IDF, cosine similarity, and caching techniques to retrieve millions of records from cloud database in under 100 milliseconds. Deployed through Watson ML with rigorous Postman testing",
+      dateRange: "Jan 2026 – now",
+      location: "New York",
+      business: "Healthcare quality, cost and payment integrity",
+      lemmas: [
+        {
+          name: "Document extraction with LLM agents",
+          text: "Designed an on-prem pipeline for unstructured documents: OCR, then LangGraph agents, a self-healing step and a rubric validator. It runs at 98%+ precision. We took it from POC to production in under three months and scaled it to 15M+ documents on Databricks and PySpark.",
+        },
+        {
+          name: "Evaluation and drift monitoring",
+          text: "Built golden datasets, a tuning framework that never touches the holdout set, and automated data and model drift tracking in production. Cleared model-risk governance before launch.",
+        },
+        {
+          name: "Unsupervised anomaly detection",
+          text: "Clustered about 2B records by behavior with SparkML to flag anomalies.",
+        },
+        {
+          name: "Topic modeling for agent routing",
+          text: "Trained an NLP topic model on about 25M past requests to improve intent routing for a LangGraph agent.",
+        },
       ],
+      result: "$20M+ annual savings in production · 2 patents pending · 1 submitted",
     },
     {
-      company: "IBM",
-      title: "Cognitive Engineer Consultant Intern (DS/ML)",
-      dateRange: "May 2022 - Aug 2022",
-      location: "New York, USA",
-      bullets: [
-        "Spearheaded brainstorming and designing of custom AI solutions for Fortune 100 bank using NLP, ML/DL on IBM Cloud & Watson",
-        "Streamlined model design for 6 sentiment and text classification models on transcripts of customer complaint calls",
-        "Achieved breakthrough performance with ensemble modeling, improving F1 scores from 0.72 to ~0.9 using TF-IDF, Word2Vec, BERT, and LSTM techniques",
+      org: "ibm" as OrgKey,
+      title: "Senior Data Scientist",
+      dateRange: "Feb 2023 – Jan 2026",
+      location: "New York",
+      business: "Enterprise AI for banking and insurance clients",
+      lemmas: [
+        {
+          name: "RAG agents",
+          text: "Built LangChain RAG agents that turn long unstructured documents into checklists and extract plots, tables and text into queryable stores. Finding information got 80% faster.",
+        },
+        {
+          name: "LLM code generation",
+          text: "Used GPT-3.5 Turbo to generate C# (97%+ accuracy) and Gherkin (70%). Team productivity went up 30%.",
+        },
+        {
+          name: "Self-service ML platform",
+          text: "Led an enterprise platform that gives 1,000+ data scientists governed access to Snowflake. Built with AWS Lambda and SQS, Terraform, React, GitLab CI/CD and RBAC, tested with Pytest and Locust.",
+        },
+        {
+          name: "Forecasting and search",
+          text: "Replaced static alerting on 150+ mainframe applications with LightGBM forecasts, retrained weekly and run daily. Also built a search that returns results from millions of records in under 100 ms.",
+        },
       ],
+      result: "1,000+ data scientists on the platform · +30% team productivity from LLM codegen",
     },
     {
-      company: "Wells Fargo",
+      org: "ibm" as OrgKey,
+      title: "Cognitive Engineer Intern, DS/ML",
+      dateRange: "May – Aug 2022",
+      location: "New York",
+      business: "Customer service analytics for a Fortune 100 bank",
+      lemmas: [
+        {
+          name: "Text classification ensembles",
+          text: "Built six sentiment and text classification models on conversational text using TF-IDF, Word2Vec, LightGBM, BERT and LSTMs.",
+        },
+      ],
+      result: "F1 0.72 → ≈0.90",
+    },
+    {
+      org: "wellsfargo" as OrgKey,
       title: "Credit Risk Analytics Associate",
-      dateRange: "Jun 2020 - May 2021",
-      location: "Bangalore, India",
-      bullets: [
-        "Created and monitored ML and statistical risk models for $30+ million unsecured credit card portfolios",
-        "Monitored model data stability and performance via advanced statistical metrics: PSI, VSI, KS, and ML evaluation metrics",
-        "Refined and executed model building threads with stakeholders, fine-tuning logistic and tree-based architectures through segmentation, exclusions, and hyperparameter optimization",
-        "Introduced and established quality checklist process that improved team's error rate from 15% to 0% quarter-over-quarter",
+      dateRange: "Jun 2020 – May 2021",
+      location: "Bangalore",
+      business: "Consumer credit risk",
+      lemmas: [
+        {
+          name: "Credit risk models",
+          text: "Built and monitored logistic and tree-based risk models for $30M+ unsecured credit card portfolios, tracking stability with PSI, VSI and KS.",
+        },
       ],
+      result: "Team error rate 15% → 0% after I introduced a QA checklist",
     },
     {
-      company: "Mu Sigma Business Solutions",
+      org: "musigma" as OrgKey,
       title: "Decision Scientist",
-      dateRange: "Jul 2018 - Jun 2020",
-      location: "Bangalore, India",
-      bullets: [
-        "Devised and presented end-to-end analytics and data science solutions for Fortune 100 companies using Python, R, SQL, SAS, and Excel",
-        "Generated Real World Evidence (RWE) for Fortune 100 pharmaceuticals through HEOR methods (Matching in case-control studies, logistic regression, Cox PH models, KM outcomes) on 1+ million row longitudinal data",
-        "Reduced 100+ work hours to minutes through survival analysis automation in Python and SAS for 150+ colleagues",
-        "Spearheaded Treatment Patterns analysis on Cancer Forums using NLP and won CEO's Interstellar Award (most innovative project)",
-        "Rewarded spot award for bringing tangible innovations and established team of 15+ through impeccable teamwork",
-        "Analyzed (EDA) medical records, claims, and registry health data to generate insights for client's R&D publications",
+      dateRange: "Jul 2018 – May 2020",
+      location: "Bangalore",
+      business: "Pharma real-world evidence for Fortune 100 clients",
+      lemmas: [
+        {
+          name: "Survival analysis",
+          text: "Built Cox PH and Kaplan–Meier pipelines on 1M+ rows of longitudinal data. Automating them cut 100+ hours of work to minutes for 150+ colleagues.",
+        },
+        {
+          name: "NLP on forum text",
+          text: "Analyzed public online forums with NLP. Also grew a team of 15+.",
+        },
       ],
+      result: "CEO's Interstellar Award · Spot Award",
     },
   ],
+
+  // Bibliography-style: recipe → result.
+  research: [
+    {
+      key: "Sig22a",
+      title: "BERT from scratch",
+      recipe: "Implemented, pre-trained and fine-tuned BERT for sentence classification on SST and CFIMDB",
+      result: "≈0.90 F1",
+      venue: "CMU Advanced NLP",
+      link: "",
+    },
+    {
+      key: "Sig22b",
+      title: "DART re-implementation",
+      recipe: "Prompt-based 16-shot text classification, improved with loss regularization and the AdamP optimizer",
+      result: "≈93% on GLUE",
+      venue: "Research re-implementation",
+      link: "https://github.com/sigadavid96/DART",
+    },
+    {
+      key: "Sig22c",
+      title: "Movie recommender service",
+      recipe: "SVD collaborative filtering for 1M users and 27k movies, containerized with CI/CD, automatic retraining and Prometheus/Grafana monitoring",
+      result: "500 ms · 99.9% uptime",
+      venue: "CMU ML in Production",
+      link: "",
+    },
+    {
+      key: "Sig21",
+      title: "ML algorithms in NumPy",
+      recipe: "Decision trees, logistic regression, a neural network and Q-learning for MountainCar",
+      result: "No ML libraries used",
+      venue: "CMU 10-601 Machine Learning",
+      link: "",
+    },
+    {
+      key: "Sig22d",
+      title: "Deep Compression, explained",
+      recipe: "Walks through pruning, quantization and Huffman coding from the ICLR 2016 best paper",
+      result: "ICLR blog post",
+      venue: "Technical writing",
+      link: "https://github.com/sigadavid96/DeepCompression/blob/master/_posts/Deep%20Learning%20-%20Deep%20Compression%20%28dsiga%29.md",
+    },
+    {
+      key: "Sig22e",
+      title: "LSTM forecasting tutorial",
+      recipe: "Forecasted stock prices from 5+ years of market data with a PyTorch LSTM",
+      result: "Test MSE ≈6.8",
+      venue: "Tutorial notebook",
+      link: "https://github.com/sigadavid96/LSTM_TimeSeriesForecasting/blob/main/dsiga_LSTM_TimeSeriesForecasting_Tutorial.ipynb",
+    },
+    {
+      key: "Sig22f",
+      title: "COVID and small businesses",
+      recipe: "Analyzed sentiment in millions of small-business tweets from the Twitter Research API",
+      result: "Sentiment by place and time",
+      venue: "Data science",
+      link: "https://github.com/sigadavid96/TwitterSentimentResearch",
+    },
+    {
+      key: "Sig22g",
+      title: "Public reaction to COVID",
+      recipe: "Compared Google Trends searches with WHO case data across countries",
+      result: "How fast people reacted",
+      venue: "Data science",
+      link: "https://github.com/sigadavid96/Time-To-React-Google-Covid",
+    },
+  ],
+
   education: [
     {
-      school: "Carnegie Mellon University",
-      degree: "Master of Information Systems Management — Specialized in AI & NLP",
-      dateRange: "Aug 2021 - Dec 2022",
-      location: "Pittsburgh, PA, USA",
-      achievements: [
-        "GPA: 3.77/4.0 — Graduated with Distinction & Dean's List",
-        "Vice President of Heinz Analytics Club: Established Data Science and Machine Learning career path, supervised analytics learning event initiatives",
-        "Graduate Teaching Assistant: Data Science, Data Mining, Decision Analytics, Disruptive Technologies, Object-Oriented Programming",
-        "Capstone Project: Machine Learning for Threat Intelligence with Fortune 100 Telecom (Verizon) — Built XGBoost classifier achieving 87% accuracy",
-        "AI/ML Track: Advanced NLP, Deep Learning, Machine Learning (10601), ML for Large Datasets, ML in Production, NLP for Social Good",
-        "Data Science Track: Practical Data Science, Making Products Count, Statistics for IT Managers, Decision-Making Under Uncertainty",
-        "Engineering: OOP, Database Management, Distributed Systems, Agile Methods, Digital Transformation",
+      org: "cmu" as OrgKey,
+      unit: "Heinz College",
+      degree: "Master of Information Systems Management",
+      dateRange: "2021 – 2022",
+      detail: "GPA 3.77 · Graduated with Distinction",
+      coursework: [
+        { name: "Machine Learning (10-601)", link: "http://www.cs.cmu.edu/~mgormley/courses/10601-s20/schedule.html" },
+        { name: "ML for Large Datasets", link: "https://10605.github.io/" },
+        { name: "Deep Learning", link: "https://deeplearning.cs.cmu.edu/F21/index.html" },
+        { name: "Advanced NLP", link: "https://phontron.com/class/anlp2022/description.html" },
+        { name: "ML in Production", link: "https://ckaestne.github.io/seai/F2022/" },
+        { name: "Practical Data Science", link: "http://www.datasciencecourse.org/" },
       ],
+      roles: [
+        "Graduate TA: Data Science, Data Mining, Decision Analytics, Disruptive Tech, OOP",
+        "Vice President, Heinz Analytics Club",
+      ],
+      consult: { org: "verizon" as OrgKey, text: "Student consultant: built an XGBoost classifier that flags suspicious sources for a cybersecurity team, with 87% accuracy" },
     },
     {
-      school: "KIIT - Kalinga Institute of Industrial Technology",
-      degree: "Bachelor of Technology in Computer Science & Engineering",
-      dateRange: "Jul 2014 - Apr 2018",
-      location: "Bhubaneswar, Odisha, India",
-      achievements: [
-        "GPA: 3.76/4.0",
-        "Core Coursework: Artificial Intelligence, Big Data Analytics, Data Structures & Algorithms, Design & Analysis of Algorithms, Database Management Systems, Parallel and Distributed Computing",
-        "Volunteered at AIESEC International: Led successful efforts to build AIESEC in Bhubaneswar, India. Fostered marketing initiatives for UN sustainable development goals, recognized as Top 30 Team Member",
-        "Extra-Curricular Activities: Badminton, Basketball, Swimming, Singing, Beat-Boxing — Active participant in sports and cultural events",
-      ],
+      org: "kiit" as OrgKey,
+      unit: "Kalinga Institute of Industrial Technology",
+      degree: "B.Tech, Computer Science & Engineering",
+      dateRange: "2014 – 2018",
+      detail: "GPA 3.76",
+      coursework: [],
+      roles: [],
+      consult: { org: "aiesec" as OrgKey, text: "Volunteered on UN Sustainable Development Goals campaigns and was named one of AIESEC India's Top 30 members" },
     },
   ],
+
+  toolbox: [
+    { group: "LLMs & agents", items: "LangGraph, LangChain, Deep Agents, RAG, FAISS, Chroma, fine-tuning, prompt engineering, LLM evaluation and drift monitoring" },
+    { group: "Modeling", items: "PyTorch, TensorFlow, scikit-learn, XGBoost, LightGBM, CatBoost, BERT, LLaMA, GPT" },
+    { group: "Data & cloud", items: "Databricks, PySpark, Snowflake, BigQuery, Vertex AI, SageMaker, Azure, AWS, IBM watsonx" },
+    { group: "Engineering", items: "Python, SQL, Go, FastAPI, Docker, Terraform, GitLab / ADO / Jenkins CI/CD" },
+    { group: "AI coding tools", items: "Claude Code, GitHub Copilot" },
+  ],
+
+  offBoard: "Badminton, swimming, basketball, singing, and beatboxing.",
 };
