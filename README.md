@@ -29,7 +29,7 @@ All text lives in `src/config.ts`:
 | `honors` | Honors and awards |
 | `research` | AI Projects |
 | `certificate`, `education` | Education, including coursework, instructors and TA roles |
-| `toolbox` | The Notation table of tools |
+| `toolbox`, `wheel` | The Notation table, and the logo wheel behind it |
 | `orgs` | Brand colors and logos for every company and university |
 
 Employer work is described by AI technique and business area only. Don't name internal use cases, data types or clients.
@@ -39,18 +39,18 @@ Employer work is described by AI technique and business area only. Don't name in
 - **[Astro 5](https://astro.build/)**, one static page. The styling is hand-written CSS in `src/styles/global.css` and in each component.
 - **Fonts:** [CM Unicode](https://cm-unicode.sourceforge.io/) (Computer Modern), subset and self-hosted in `public/fonts/`. A subset of [Latin Modern Math](https://www.gust.org.pl/projects/e-foundry/lm-math) supplies the math symbols (→ ≈ ∞ θ).
 - **Chalk effects:** SVG filters (`#chalk`, `#chalk-soft`, `#chalk-line`) defined in `src/pages/index.astro`.
-- **Logos:** recoloured chalk-white versions of each company's own mark, in `public/logos/`.
+- **Logos:** recoloured chalk-white versions of each company's own mark, in `public/logos/`. The tool logos on the wheel behind the Notation table come from [Simple Icons](https://simpleicons.org) (CC0), in `public/logos/tools/`.
 - **Interactions:** a small inline script handles the λ toggle, the section tracker in the bottom tray, and drawing and erasing chalk.
 
 ```
 src/
-├── components/   Hero, Abstract, Experience, Honors, Projects, Education, Footer, Tray, Org, Brace
+├── components/   Hero, Definition, Abstract, Experience, Honors, Projects, Education, Footer, Tray, Org, Brace
 ├── pages/        index.astro (page shell, SVG filters, script)
 ├── styles/       global.css (tokens, board, smears, tray)
 └── config.ts     all content
 public/
 ├── fonts/        CM Unicode and Latin Modern Math subsets (woff2)
-└── logos/        company marks
+└── logos/        company marks; tools/ holds the wheel icons
 PRODUCT.md        who the site is for, and its content rules
 DESIGN.md         the visual system: colors, type, components
 ```

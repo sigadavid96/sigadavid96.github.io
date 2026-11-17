@@ -19,6 +19,13 @@ const year = new Date().getFullYear();
       <li><a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer">GitHub</a></li>
     </ul>
 
+    <figure class="sign-off">
+      <blockquote>
+        <p>“We can only see a short distance ahead, but we can see plenty there that needs to be done.”</p>
+      </blockquote>
+      <figcaption>Alan Turing, <cite>Computing Machinery and Intelligence</cite>, 1950</figcaption>
+    </figure>
+
     <p class="off muted"><em>Outside work:</em> {siteConfig.offBoard}</p>
 
     <p class="colophon mono">
@@ -39,6 +46,11 @@ const year = new Date().getFullYear();
   }
   .mail a { text-decoration-thickness: 2px; text-underline-offset: 0.16em; }
   .links { list-style: none; padding: 0; margin: 0 0 clamp(3rem, 6vw, 5rem); display: flex; gap: 2rem; font-family: var(--f-display); font-size: 1.15rem; }
+  .sign-off { margin: 0 0 clamp(2.5rem, 5vw, 4rem); max-width: 34rem; }
+  .sign-off blockquote { margin: 0; }
+  .sign-off p { margin: 0; font-family: var(--f-display); font-style: italic; font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.45; }
+  .sign-off figcaption { margin-top: 0.6rem; color: var(--chalk-2); font-size: 0.98rem; }
+  .sign-off cite { font-style: italic; }
   .off { margin: 0 0 1.25rem; }
   .off em { color: var(--chalk); }
   .colophon { margin: 0; font-size: 0.82rem; color: var(--chalk-3); }

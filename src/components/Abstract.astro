@@ -1,5 +1,9 @@
 ---
 import { siteConfig } from "../config";
+// Two counter-rotating rings: every other logo goes to the inner ring.
+const outer = siteConfig.wheel.filter((_, i) => i % 3 !== 2);
+const inner = siteConfig.wheel.filter((_, i) => i % 3 === 2);
+const logoSrc = (s: string) => (s === "ibm" ? "/logos/ibm.svg" : `/logos/tools/${s}.svg`);
 ---
 
 <section id="abstract" class="panel" data-section="abstract" aria-labelledby="abstract-h">
@@ -13,11 +17,27 @@ import { siteConfig } from "../config";
     </div>
 
     <aside class="notation" aria-labelledby="notation-h">
+      <div class="wheel" aria-hidden="true">
+        <div class="wring outer">
+          {outer.map((t, i) => (
+            <span class="slot" style={`--a:${(i * 360) / outer.length}deg`}>
+              <img class="wtool" src={logoSrc(t.src)} alt="" data-g={t.g} width="24" height="24" loading="lazy" decoding="async" />
+            </span>
+          ))}
+        </div>
+        <div class="wring inner">
+          {inner.map((t, i) => (
+            <span class="slot" style={`--a:${(i * 360) / inner.length + 15}deg`}>
+              <img class="wtool" src={logoSrc(t.src)} alt="" data-g={t.g} width="24" height="24" loading="lazy" decoding="async" />
+            </span>
+          ))}
+        </div>
+      </div>
       <h3 id="notation-h" class="notation-h">Notation</h3>
       <dl>
         {
           siteConfig.toolbox.map((t) => (
-            <div class="row">
+            <div class="row" data-g={t.id}>
               <dt>{t.group}</dt>
               <dd>{t.items}</dd>
             </div>
@@ -27,6 +47,14 @@ import { siteConfig } from "../config";
     </aside>
   </div>
 </section>
+
+<script>
+  const notation = document.querySelector<HTMLElement>(".notation");
+  notation?.querySelectorAll<HTMLElement>(".row[data-g]").forEach((row) => {
+    row.addEventListener("mouseenter", () => (notation.dataset.active = row.dataset.g));
+    row.addEventListener("mouseleave", () => delete notation.dataset.active);
+  });
+</script>
 
 <style>
   .abs-grid {
@@ -47,9 +75,49 @@ import { siteConfig } from "../config";
   .domains em { color: var(--chalk); }
 
   .notation {
+    position: relative;
+    isolation: isolate;
     border-top: 1px solid rgb(236 234 225 / 0.25);
     padding-top: 1.25rem;
     margin-top: clamp(0rem, 7vw, 6.2rem);
+  }
+  .notation > :not(.wheel) { position: relative; z-index: 1; }
+
+  /* the tool wheel: turns slowly behind the table; hovering a row lights its logos */
+  .wheel {
+    position: absolute; z-index: 0; pointer-events: none;
+    left: 50%; top: 55%;
+    width: min(100%, 30rem); aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    --spin: 160s;
+  }
+  .wring { position: absolute; inset: 0; animation: spin var(--spin) linear infinite; }
+  .wring.inner { inset: 22%; animation-direction: reverse; animation-duration: calc(var(--spin) * 0.75); }
+  .slot {
+    --s: clamp(1.5rem, 2.5vw, 2rem);
+    position: absolute; left: 50%; top: 50%;
+    width: var(--s); height: var(--s); margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2);
+    transform: rotate(var(--a)) translateY(-47cqw) rotate(calc(-1 * var(--a)));
+  }
+  .wring { container-type: inline-size; }
+  .wtool {
+    display: block; width: 100%; height: 100%; object-fit: contain;
+    opacity: 0.12;
+    animation: spin var(--spin) linear infinite reverse;
+    transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+  }
+  .wring.inner .wtool { animation-direction: normal; animation-duration: calc(var(--spin) * 0.75); }
+  .notation[data-active] .wtool { opacity: 0.05; }
+  .notation[data-active="llm"] .wtool[data-g="llm"],
+  .notation[data-active="model"] .wtool[data-g="model"],
+  .notation[data-active="data"] .wtool[data-g="data"],
+  .notation[data-active="eng"] .wtool[data-g="eng"],
+  .notation[data-active="ai"] .wtool[data-g="ai"] { opacity: 0.6; }
+  .row { transition: background-color 0.3s var(--ease-out); }
+  .notation[data-active] .row[data-g] dt { transition: color 0.3s; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) {
+    .wring, .wtool { animation: none; }
   }
   .notation-h {
     font-family: var(--f-display);

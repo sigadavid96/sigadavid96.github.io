@@ -1,0 +1,37 @@
+---
+// Tom Mitchell's definition of machine learning (Machine Learning, McGraw-Hill, 1997),
+// typeset as an amsthm-style definition: bold head, italic statement.
+---
+
+<section class="panel definition" aria-label="Definition of machine learning, Tom Mitchell, 1997">
+  <div class="wrap">
+    <blockquote class="def" cite="https://www.cs.cmu.edu/~tom/mlbook.html">
+      <p>
+        <b class="dh">Definition</b> <span class="src">(Mitchell, 1997).</span>
+        <em>
+          A computer program is said to learn from experience <i class="v">E</i> with respect to
+          some class of tasks <i class="v">T</i> and performance measure <i class="v">P</i>, if its
+          performance at tasks in <i class="v">T</i>, as measured by <i class="v">P</i>, improves with
+          experience <i class="v">E</i>.
+        </em>
+      </p>
+    </blockquote>
+  </div>
+</section>
+
+<style>
+  .definition { padding-top: clamp(3.5rem, 7vw, 5.5rem); padding-bottom: clamp(3.5rem, 7vw, 5.5rem); }
+  .def { margin: 0 auto; max-width: 60ch; }
+  .def p {
+    margin: 0;
+    font-family: var(--f-display);
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    line-height: 1.55;
+    color: var(--chalk-2);
+    text-wrap: pretty;
+  }
+  .dh { color: var(--chalk); font-weight: 700; }
+  .src { color: var(--chalk); }
+  .def em { font-style: italic; }
+  .v { font-style: italic; color: var(--chalk); }
+</style>
